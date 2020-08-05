@@ -10,6 +10,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 0,
+    color: 'black',
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -24,7 +25,7 @@ export default function ButtonAppBar() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="static" color="black">
         <Toolbar>
           <IconButton
             edge="start"
