@@ -9,10 +9,12 @@ const useStyles = makeStyles(() => ({
   appBar: {
     top: 'auto',
     bottom: 0,
+    color: 'black',
   },
   grow: {
     flexGrow: 1,
   },
+  test: {},
 }));
 
 function Copyright() {
@@ -34,7 +36,7 @@ export default function Footer() {
     <FooterWrapper>
       <CSSBaseline />
       <AppBar className={classes.appBar}>
-        <Toolbar>
+        <Toolbar color="inherit" className={classes.test}>
           <Copyright />
         </Toolbar>
       </AppBar>
