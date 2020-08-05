@@ -2,8 +2,6 @@ import React from 'react';
 
 // import { Container } from './styles';
 
-function Home() {
-  return <h1>Home</h1>;
+export default function Home() {
+  return <h2>Home</h2>;
 }
-
-export default Home;
