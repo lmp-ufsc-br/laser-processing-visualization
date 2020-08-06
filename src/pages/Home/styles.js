@@ -1,5 +1,33 @@
 import styled from 'styled-components';
 
+export const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+`;
+
+export const TitleContainer = styled.div`
+  background: #363636;
+  width: 100%;
+  padding: 0 100px 0 100px;
+
+  h1 {
+    font-size: 3.5rem;
+    font-weight: 300;
+    line-height: 1.2;
+    color: #fafafa !important;
+    margin-top: 3rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 300;
+    margin-bottom: 3rem !important;
+    color: #d3d3d3 !important;
+  }
+`;
+
 export const Link = styled.a`
   font-size: 24px;
   text-decoration: none;
@@ -17,6 +45,8 @@ export const Form = styled.form`
     font-size: 16px;
   }
 `;
+
+// ------ Other Components ------
 
 export const SubmitButton = styled.button.attrs(() => ({
   type: 'submit',
@@ -45,8 +75,4 @@ export const List = styled.ul`
       border-top: 1px solid #eee;
     }
   }
-`;
-export const Content = styled.div`
-  display: flex;
-  flex-direction: column;
 `;

@@ -6,5 +6,4 @@ export const Container = styled.div`
   flex: 1 1 auto;
   overflow-x: hidden;
   justify-content: center;
-  align-items: center;
 `;
