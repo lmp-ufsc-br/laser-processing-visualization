@@ -8,7 +8,10 @@ export const FooterWrapper = styled.footer`
   flex-shrink: 0;
   min-height: 64px;
   width: 100%;
-  background-color: #343a40 !important;
+
+  #app {
+    background: #363636;
+  }
 
   @media (max-width: 300px) {
     min-width: 270px;
@@ -16,11 +19,11 @@ export const FooterWrapper = styled.footer`
 
   p {
     text-align: center !important;
-    color: #fff !important;
+    color: #000000 !important;
   }
 
   a {
     text-decoration: none;
-    color: #fff;
+    color: #000000;
   }
 `;

@@ -1,11 +1,30 @@
-import { createMuiTheme } from '@material-ui/core';
-import { red, amber } from '@material-ui/core/colors';
+import { createGlobalStyle } from 'styled-components';
 
-export const theme = createMuiTheme({
-  palette: {
-    primary: red,
-    secondary: {
-      main: amber[500],
-    },
-  },
-});
+export default createGlobalStyle`
+  * {
+   margin: 0;
+   padding: 0;
+   outline: 0;
+   box-sizing: border-box;
+  }
+
+  html, body, #root {
+    min-height: 100%;
+    background: #fafafa;
+  }
+
+  body {
+
+    -webkit-font-smothing: antialiased !important;
+  }
+
+  body, input, button {
+    color: #222;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  button {
+    cursor: pointer;
+  }
+`;

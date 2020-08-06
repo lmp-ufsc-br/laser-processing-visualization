@@ -9,6 +9,7 @@ const useStyles = makeStyles(() => ({
   appBar: {
     top: 'auto',
     bottom: 0,
+    color: 'black',
   },
   grow: {
     flexGrow: 1,
@@ -21,7 +22,7 @@ function Copyright() {
   return (
     <Typography m={4} variant="body1" color="inherit" className={classes.grow}>
       {'Copyright © '}
-      <Link href="https://material-ui.com/">MyTemplate</Link>{' '}
+      <Link href="https://material-ui.com/">Laser Simulation</Link>{' '}
       {new Date().getFullYear()}
       {'.'}
     </Typography>
@@ -34,7 +35,7 @@ export default function Footer() {
     <FooterWrapper>
       <CSSBaseline />
       <AppBar className={classes.appBar}>
-        <Toolbar>
+        <Toolbar id="app">
           <Copyright />
         </Toolbar>
       </AppBar>

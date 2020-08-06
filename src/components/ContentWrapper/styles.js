@@ -5,4 +5,5 @@ export const Container = styled.div`
   flex-direction: row;
   flex: 1 1 auto;
   overflow-x: hidden;
+  justify-content: center;
 `;
