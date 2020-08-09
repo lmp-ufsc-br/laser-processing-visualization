@@ -1,4 +1,5 @@
 import React from 'react';
+import P5Canvas from '../../components/P5Canvas';
 
 import { Content, TitleContainer } from './styles';
 // import LMD from './img/LMD.png';
@@ -13,6 +14,7 @@ export default function Home() {
           gravida bibendum faucibus. Suspendisse porta dapibus nisi, sit amet
           aliquet lacus vehicula eu.
         </h3>
+        <P5Canvas />
       </TitleContainer>
     </Content>
   );
