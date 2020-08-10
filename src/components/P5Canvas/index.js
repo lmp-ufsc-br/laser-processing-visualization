@@ -1,6 +1,8 @@
 import React from 'react';
 import P5 from 'p5';
 
+import { Container } from './styles';
+
 export default class P5Canvas extends React.Component {
   constructor(props) {
     super(props);
@@ -13,17 +15,17 @@ export default class P5Canvas extends React.Component {
 
   Sketch = (s) => {
     s.setup = () => {
-      s.createCanvas(200, 200);
+      s.createCanvas(400, 400);
     };
 
     s.draw = () => {
       s.background(0);
       s.fill(255);
-      s.ellipse(s.mouseX, s.mouseY, 50, 50);
+      s.ellipse(s.mouseX, s.mouseY, 25, 25);
     };
   };
 
   render() {
-    return <div ref={this.myRef} />;
+    return <Container ref={this.myRef} />;
   }
 }
