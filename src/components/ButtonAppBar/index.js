@@ -22,7 +22,7 @@ export default function ButtonAppBar() {
       <AppBar id="appbar" position="static">
         <Toolbar id="Toolbar">
           <Typography id="text" variant="h6" className={classes.title}>
-            Laser Simulation
+            LMP
           </Typography>
           <Button color="black">Login</Button>
         </Toolbar>
