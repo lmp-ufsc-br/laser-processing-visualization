@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <FooterDiv>
       <FooterContainer>
-        <p>Copyright &copy; hipeerLab 2020</p>
+        <p>Copyright &copy; LMP 2020</p>
       </FooterContainer>
     </FooterDiv>
   );

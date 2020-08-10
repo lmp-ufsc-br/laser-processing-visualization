@@ -3,12 +3,12 @@ import P5Canvas from '../../components/P5Canvas';
 
 import { Content, TitleContainer, Container } from './styles';
 
-export default function Home() {
+export default function LaserMatter() {
   return (
     <>
       <Content>
         <TitleContainer>
-          <h1>Home</h1>
+          <h1>Laser Simulation</h1>
           <h3>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
             gravida bibendum faucibus. Suspendisse porta dapibus nisi, sit amet
