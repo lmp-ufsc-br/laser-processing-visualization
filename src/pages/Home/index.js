@@ -8,7 +8,7 @@ export default function Home() {
     <>
       <Content>
         <TitleContainer>
-          <h1>Laser Simulation</h1>
+          <h1>Home</h1>
           <h3>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
             gravida bibendum faucibus. Suspendisse porta dapibus nisi, sit amet
