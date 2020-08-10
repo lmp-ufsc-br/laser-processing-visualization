@@ -28,22 +28,10 @@ export const TitleContainer = styled.div`
   }
 `;
 
-export const Link = styled.a`
-  font-size: 24px;
-  text-decoration: none;
-  color: #808080;
-`;
-
-export const Form = styled.form`
+export const Container = styled.div`
   display: flex;
   flex-direction: row;
-  input {
-    flex: 1;
-    border: 1px solid #eee;
-    padding: 10px 15px;
-    border-radius: 4px;
-    font-size: 16px;
-  }
+  justify-content: center;
 `;
 
 // ------ Other Components ------
@@ -74,5 +62,23 @@ export const List = styled.ul`
     & + li {
       border-top: 1px solid #eee;
     }
+  }
+`;
+
+export const Link = styled.a`
+  font-size: 24px;
+  text-decoration: none;
+  color: #808080;
+`;
+
+export const Form = styled.form`
+  display: flex;
+  flex-direction: row;
+  input {
+    flex: 1;
+    border: 1px solid #eee;
+    padding: 10px 15px;
+    border-radius: 4px;
+    font-size: 16px;
   }
 `;

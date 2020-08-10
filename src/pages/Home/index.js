@@ -1,22 +1,25 @@
 import React from 'react';
 import P5Canvas from '../../components/P5Canvas';
 
-import { Content, TitleContainer } from './styles';
-// import LMD from './img/LMD.png';
+import { Content, TitleContainer, Container } from './styles';
 
 export default function Home() {
   return (
-    <Content>
-      <TitleContainer>
-        <h1>Laser Simulation</h1>
-        <h3>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
-          gravida bibendum faucibus. Suspendisse porta dapibus nisi, sit amet
-          aliquet lacus vehicula eu.
-        </h3>
-        <P5Canvas />
-      </TitleContainer>
-    </Content>
+    <>
+      <Content>
+        <TitleContainer>
+          <h1>Laser Simulation</h1>
+          <h3>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+            gravida bibendum faucibus. Suspendisse porta dapibus nisi, sit amet
+            aliquet lacus vehicula eu.
+          </h3>
+        </TitleContainer>
+        <Container>
+          <P5Canvas />
+        </Container>
+      </Content>
+    </>
   );
 }
 
