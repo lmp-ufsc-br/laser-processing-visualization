@@ -19,9 +19,27 @@ export default class P5Canvas extends React.Component {
     };
 
     s.draw = () => {
-      s.background(0);
-      s.fill(255);
-      s.ellipse(s.mouseX, s.mouseY, 25, 25);
+      s.background(200);
+
+      s.noStroke();
+      s.fill(0);
+      s.ellipse(12.5, 12.5, 50, 50);
+
+      const pos = s.createVector(30, 30);
+      const mouse = s.createVector(s.mouseX, s.mouseY);
+
+      const v = P5.Vector.sub(mouse, pos);
+      /** s.translate(30, 30);
+      s.stroke(255, 0, 0);
+      s.strokeWeight(2);
+      s.line(0, 0, v.x, v.y);
+      */
+      if (s.mouseIsPressed) {
+        s.translate(30, 30);
+        s.stroke(255, 0, 0);
+        s.strokeWeight(2);
+        s.line(0, 0, v.x, v.y);
+      }
     };
   };
 
