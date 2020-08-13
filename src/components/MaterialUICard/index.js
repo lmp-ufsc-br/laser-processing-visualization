@@ -2,12 +2,11 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
+
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 
 import Typography from '@material-ui/core/Typography';
-import { Link } from './styles';
 
 const useStyles = makeStyles({
   root: {
@@ -16,7 +15,7 @@ const useStyles = makeStyles({
     margin: '30px 30px 0 30px',
   },
   media: {
-    height: 100,
+    height: 130,
   },
 });
 
@@ -24,11 +23,8 @@ export default function MediaCard() {
   const classes = useStyles();
 
   return (
-    <Card
-      href="https://material-ui.com/customization/components/#overriding-styles-with-global-class-names"
-      className={classes.root}
-    >
-      <CardActionArea>
+    <Card className={classes.root}>
+      <CardActionArea id="cardaction">
         <CardMedia
           className={classes.media}
           image="/static/images/cards/contemplative-reptile.jpg"
@@ -44,11 +40,6 @@ export default function MediaCard() {
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions>
-        <Link href="https://material-ui.com/pt/components/cards/">
-          Learn More
-        </Link>
-      </CardActions>
     </Card>
   );
 }

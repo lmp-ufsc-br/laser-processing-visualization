@@ -1,15 +1,14 @@
 import React from 'react';
 
 import { Card, TextContent } from './styles';
-import LMD from '../../pages/Home/img/LMD.png';
 
 export default function ReferenceCard(props) {
   return (
     <Card href={props.route}>
-      <img src={LMD} alt="" />
+      <img src={props.imgSrc} alt="" />
       <TextContent>
-        <h2>blabla</h2>
-        <p>blablablablablablablablablablablablablablablabla</p>
+        <h2>{props.title}</h2>
+        <p>{props.description}</p>
       </TextContent>
     </Card>
   );
