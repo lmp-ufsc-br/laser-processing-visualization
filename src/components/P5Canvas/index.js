@@ -64,6 +64,12 @@ export default class P5Canvas extends React.Component {
         laserRayStartPosition
       );
 
+      const bottomWall = 300;
+      s.stroke(0);
+      s.strokeWeight(4);
+      s.line(0, bottomWall, s.width, bottomWall);
+
+      const yc = s.constrain(s.mouseY, 0, bottomWall);
       /**
        * If mouse is pressed, a line, that represents the laser beam is shot from position (0,0)
        * until position where it was clicked
@@ -71,7 +77,19 @@ export default class P5Canvas extends React.Component {
       if (s.mouseIsPressed) {
         s.stroke(255, 0, 0);
         s.strokeWeight(2);
-        s.line(0, 0, laserVector.x, laserVector.y);
+        s.line(0, 0, laserVector.x, yc);
+
+        if (s.mouseY >= bottomWall) {
+          const n = s.createVector(0, s.width / 2);
+
+          const r = laserVector.copy();
+          r.reflect(n);
+
+          s.stroke(130, 0, 0);
+          s.strokeWeight(2);
+          s.translate(laserVector.x, yc);
+          s.line(0, 0, r.x, r.y);
+        }
       }
     };
   };
