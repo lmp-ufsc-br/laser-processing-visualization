@@ -64,31 +64,49 @@ export default class P5Canvas extends React.Component {
         laserRayStartPosition
       );
 
-      const bottomWall = 300;
+      /** Create a bottom wall to limit the laser propagation */
+      const bottomWallPosition = 300;
       s.stroke(0);
       s.strokeWeight(4);
-      s.line(0, bottomWall, s.width, bottomWall);
-
-      const yc = s.constrain(s.mouseY, 0, bottomWall);
       /**
-       * If mouse is pressed, a line, that represents the laser beam is shot from position (0,0)
-       * until position where it was clicked
+       * The wall is a line from x=0 to x=width (the own width fo canvas);
+       * and y position is represented by the constant "bottomWall", whose value is 300;
+       */
+      s.line(0, bottomWallPosition, s.width, bottomWallPosition);
+
+      /**
+       * Yc creates the limit on the y axis using the constrain method;
+       * constrain(number to constrain, minimum limit, maximum limit);
+       * number to constrain = the mouseY movement, minimum limit = (y=0), maximum limit = (y = bottomWallPosition = 300);
+       */
+      const bottomWall = s.constrain(s.mouseY, 0, bottomWallPosition);
+      /**
+       * If mouse is pressed, a line, that represents the laser beam is shot from position (0,0);
+       * until position where it was clicked;
        */
       if (s.mouseIsPressed) {
         s.stroke(255, 0, 0);
         s.strokeWeight(2);
-        s.line(0, 0, laserVector.x, yc);
+        s.line(0, 0, laserVector.x, bottomWall);
 
-        if (s.mouseY >= bottomWall) {
-          const n = s.createVector(0, s.width / 2);
-
-          const r = laserVector.copy();
-          r.reflect(n);
+        /** if the mouseY >= bottomWallPosition, the reflected line appears */
+        if (s.mouseY >= bottomWallPosition) {
+          /**
+           * The reflection depends of a normal vector;
+           * It behaves like a mirror
+           */
+          const normalVector = s.createVector(0, 1);
+          /**
+           * Variable "reflectedLaserVector" receives laserVector copy, and using the reflect method;
+           * the vector is reflected;
+           */
+          const reflectedLaserVector = laserVector.copy();
+          reflectedLaserVector.reflect(normalVector);
 
           s.stroke(130, 0, 0);
           s.strokeWeight(2);
-          s.translate(laserVector.x, yc);
-          s.line(0, 0, r.x, r.y);
+          s.translate(laserVector.x, bottomWall);
+          s.line(0, 0, reflectedLaserVector.x, reflectedLaserVector.y);
         }
       }
     };
