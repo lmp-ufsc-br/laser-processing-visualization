@@ -9,7 +9,6 @@ const SHEET_ID = '1BolFKBm8zPFCCosqEhH1m7MZ6NK8zUGn5Wne91aW62k';
 export default function References() {
   const [state, setState] = useState([]);
 
-
   const fetchFromDrive = async () => {
     const result = await drive({
       sheet: SHEET_ID,
@@ -29,15 +28,13 @@ export default function References() {
     <>
       <Container>
         <Content>
-          {
-            state.map((reference)=> (
-              <ReferenceCard
-                route={reference.referenceurl}
-                imgSrc={reference.imageurl}
-                description={reference.description}
-              />
-            ));
-          }
+          {state.map((reference) => (
+            <ReferenceCard
+              route={reference.referenceurl}
+              imgSrc={reference.imageurl}
+              description={reference.description}
+            />
+          ))}
         </Content>
       </Container>
     </>
