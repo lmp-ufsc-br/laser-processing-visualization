@@ -15,7 +15,7 @@ export default class P5Canvas extends React.Component {
 
   Sketch = (s) => {
     s.setup = () => {
-      s.createCanvas(400, 400);
+      s.createCanvas(800, 400);
     };
 
     /** X coordinate of the laser source */
@@ -65,7 +65,7 @@ export default class P5Canvas extends React.Component {
       );
 
       /** Create a bottom wall to limit the laser propagation */
-      const bottomWallPosition = 300;
+      const bottomWallPosition = 250;
       s.stroke(0);
       s.strokeWeight(5);
       /**
@@ -75,19 +75,13 @@ export default class P5Canvas extends React.Component {
       s.line(0, bottomWallPosition, s.width, bottomWallPosition);
 
       /**
-       * Yc creates the limit on the y axis using the constrain method;
-       * constrain(number to constrain, minimum limit, maximum limit);
-       * number to constrain = the mouseY movement, minimum limit = (y=0), maximum limit = (y = bottomWallPosition = 300);
-       */
-      const bottomWall = s.constrain(s.mouseY, 0, bottomWallPosition);
-      /**
        * If mouse is pressed, a line, that represents the laser beam is shot from position (0,0);
        * until position where it was clicked;
        */
       if (s.mouseIsPressed) {
         s.stroke(255, 0, 0);
         s.strokeWeight(2);
-        s.line(0, 0, laserVector.x, bottomWall);
+        s.line(0, 0, laserVector.x, laserVector.y);
 
         /** if the mouseY >= bottomWallPosition, the reflected line appears */
 
@@ -96,11 +90,16 @@ export default class P5Canvas extends React.Component {
            * A new vector was created to be copied to generate the reflected vector
            * This new vector has the y position fixed
            */
-          const laserStartVector = s.createVector(0, 0);
-          const laserEndVector = s.createVector(s.mouseX, 300);
-          const laserLimitedVector = P5.Vector.sub(
-            laserEndVector,
-            laserStartVector
+          const xLaserReflectedStartPosition =
+            (s.mouseX * bottomWallPosition) / s.mouseY;
+          const reflectionStartBaseVector = s.createVector(0, 0);
+          const reflectionEndBaseVector = s.createVector(
+            xLaserReflectedStartPosition,
+            bottomWallPosition
+          );
+          const reflectionBaseVector = P5.Vector.sub(
+            reflectionEndBaseVector,
+            reflectionStartBaseVector
           );
           /**
            * The reflection depends of a normal vector;
@@ -111,30 +110,13 @@ export default class P5Canvas extends React.Component {
            * Variable "reflectedLaserVector" receives laserVector copy, and using the reflect method;
            * the vector is reflected;
            */
-          const reflectedLaserVector = laserLimitedVector.copy();
+          const reflectedLaserVector = reflectionBaseVector.copy();
           reflectedLaserVector.reflect(normalVector);
 
           s.stroke(170, 0, 0);
           s.strokeWeight(2);
-          s.translate(laserLimitedVector.x, laserLimitedVector.y);
+          s.translate(reflectionBaseVector.x, reflectionBaseVector.y);
           s.line(0, 0, reflectedLaserVector.x, reflectedLaserVector.y);
-
-          /**
-           * The refraction depends of a normal vector;
-           * It behaves like a mirror
-           */
-          const secondNormalVector = s.createVector(1, 0);
-          /**
-           * Variable "refractedLaserVector" receives reflectedLaserVector copy, and using the reflect method;
-           * the vector is reflected;
-           */
-          const refractedLaserVector = reflectedLaserVector.copy();
-          refractedLaserVector.reflect(secondNormalVector);
-
-          s.stroke(100, 0, 0);
-          s.strokeWeight(2);
-          s.translate(reflectedLaserVector.x, bottomWall);
-          s.line(0, 0, refractedLaserVector.x, refractedLaserVector.y);
         }
       }
     };
