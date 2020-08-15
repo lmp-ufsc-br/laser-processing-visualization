@@ -74,14 +74,29 @@ export default class P5Canvas extends React.Component {
         laserRayStartPosition
       );
 
+      /**
+       * Bottom wall
+       * The wall is a line from x=0 to x=width (the own width fo canvas);
+       * and y position is represented by the constant "bottomWall";
+       */
+
       /** Create a bottom wall to limit the laser propagation */
       const bottomWallPosition = 250;
+
+      s.stroke(0);
+      s.strokeWeight(5);
+      s.line(0, bottomWallPosition, s.width, bottomWallPosition);
 
       /**
        * If mouse is pressed, a line, that represents the laser beam is shot from position (0,0);
        * until position where it was clicked;
        */
       if (s.mouseIsPressed) {
+        /** Draw laser ray */
+        s.stroke(255, 0, 0);
+        s.strokeWeight(2);
+        s.line(0, 0, laserVector.x, laserVector.y);
+
         /** if the mouseY >= bottomWallPosition, the reflected line appears */
         if (laserVector.y >= bottomWallPosition) {
           /**
@@ -111,23 +126,7 @@ export default class P5Canvas extends React.Component {
           const reflectedLaserVector = reflectionBaseVector.copy();
           reflectedLaserVector.reflect(normalVector);
 
-          /** ------------------------- DRAWINGS ---------------------------- */
-
-          /** Laser ray */
-          s.stroke(255, 0, 0);
-          s.strokeWeight(2);
-          s.line(0, 0, laserVector.x, laserVector.y);
-
-          /**
-           * Bottom wall
-           * The wall is a line from x=0 to x=width (the own width fo canvas);
-           * and y position is represented by the constant "bottomWall";
-           */
-          s.stroke(0);
-          s.strokeWeight(5);
-          s.line(0, bottomWallPosition, s.width, bottomWallPosition);
-
-          /** Reflected ray */
+          /** Draw reflected ray */
           s.stroke(170, 0, 0);
           s.strokeWeight(2);
           s.translate(reflectionBaseVector.x, reflectionBaseVector.y);
