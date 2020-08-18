@@ -81,11 +81,15 @@ export default class P5Canvas extends React.Component {
        */
 
       /** Create a bottom wall to limit the laser propagation */
-      const bottomWallPosition = 250;
+      const bottomWall = {
+        yPosition: 250,
+        thickness: 5,
+        color: 0,
+      };
 
-      s.stroke(0);
-      s.strokeWeight(5);
-      s.line(0, bottomWallPosition, s.width, bottomWallPosition);
+      s.stroke(bottomWall.color);
+      s.strokeWeight(bottomWall.thickness);
+      s.line(0, bottomWall.yPosition, s.width, bottomWall.yPosition);
 
       /**
        * If mouse is pressed, a line, that represents the laser beam is shot from position (0,0);
@@ -93,22 +97,34 @@ export default class P5Canvas extends React.Component {
        */
       if (s.mouseIsPressed) {
         /** Draw laser ray */
-        s.stroke(255, 0, 0);
+        s.stroke(laserSource.color.r, laserSource.color.g, laserSource.color.b);
         s.strokeWeight(2);
-        s.line(0, 0, laserVector.x, laserVector.y);
+        s.line(laserSource.x, laserSource.y, laserVector.x, laserVector.y);
 
         /** if the mouseY >= bottomWallPosition, the reflected line appears */
-        if (laserVector.y >= bottomWallPosition) {
+        if (laserVector.y >= bottomWall.yPosition) {
           /**
            * A new vector was created to be copied to generate the reflected vector
            * This new vector has the y position fixed
            */
-          const xLaserReflectedStartPosition =
-            (s.mouseX * bottomWallPosition) / s.mouseY;
-          const reflectionStartBaseVector = s.createVector(0, 0);
+
+          const reflectedRay = {
+            xStartPosition: (s.mouseX * bottomWall.yPosition) / s.mouseY,
+            thickness: 2,
+            color: {
+              r: 170,
+              g: 0,
+              b: 0,
+            },
+          };
+
+          const reflectionStartBaseVector = s.createVector(
+            laserSource.x,
+            laserSource.y
+          );
           const reflectionEndBaseVector = s.createVector(
-            xLaserReflectedStartPosition,
-            bottomWallPosition
+            reflectedRay.xStartPosition,
+            bottomWall.yPosition
           );
           const reflectionBaseVector = P5.Vector.sub(
             reflectionEndBaseVector,
@@ -127,8 +143,13 @@ export default class P5Canvas extends React.Component {
           reflectedLaserVector.reflect(normalVector);
 
           /** Draw reflected ray */
-          s.stroke(170, 0, 0);
-          s.strokeWeight(2);
+
+          s.stroke(
+            reflectedRay.color.r,
+            reflectedRay.color.g,
+            reflectedRay.color.b
+          );
+          s.strokeWeight(reflectedRay.thickness);
           s.translate(reflectionBaseVector.x, reflectionBaseVector.y);
           s.line(0, 0, reflectedLaserVector.x, reflectedLaserVector.y);
         }
