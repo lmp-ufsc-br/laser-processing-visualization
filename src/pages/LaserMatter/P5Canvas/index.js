@@ -96,13 +96,44 @@ export default class P5Canvas extends React.Component {
        * until position where it was clicked;
        */
       if (s.mouseIsPressed) {
-        /** Draw laser ray */
-        s.stroke(laserSource.color.r, laserSource.color.g, laserSource.color.b);
-        s.strokeWeight(2);
-        s.line(laserSource.x, laserSource.y, laserVector.x, laserVector.y);
+        /** The incidence angle(radians) is equal to the arctan of mouseY position over the mouseX position */
+        const incidenceAngleInRadians = s.atan(
+          laserRayDirection.y / laserRayDirection.x
+        );
+        /** To convert radians to degrees, just calculate a rule of three */
+        const incidenceAngleInDegrees = (180 * incidenceAngleInRadians) / s.PI;
 
-        /** if the mouseY >= bottomWallPosition, the reflected line appears */
-        if (laserVector.y >= bottomWall.yPosition) {
+        const textProperties = {
+          edgeThickness: 0,
+          color: {
+            greyscale: 50,
+          },
+          x: 10,
+          y: 350,
+          decimalPlaces: 2,
+        };
+
+        s.strokeWeight(textProperties.edgeThickness);
+        s.fill(textProperties.color.greyscale);
+        s.text(
+          `Ângulo de incidência: ${incidenceAngleInDegrees.toFixed(
+            textProperties.decimalPlaces
+          )}`,
+          textProperties.x,
+          textProperties.y
+        );
+
+        /** if the mouseY <= bottomWallPosition, the reflected line appears */
+        if (laserVector.y <= bottomWall.yPosition) {
+          /** Draw laser ray */
+          s.stroke(
+            laserSource.color.r,
+            laserSource.color.g,
+            laserSource.color.b
+          );
+          s.strokeWeight(2);
+          s.line(laserSource.x, laserSource.y, laserVector.x, laserVector.y);
+        } else {
           /**
            * A new vector was created to be copied to generate the reflected vector
            * This new vector has the y position fixed
@@ -130,6 +161,35 @@ export default class P5Canvas extends React.Component {
             reflectionEndBaseVector,
             reflectionStartBaseVector
           );
+          const guideBeam = {
+            thickness: 2,
+            color: {
+              greyscale: 150,
+            },
+          };
+
+          s.stroke(
+            laserSource.color.r,
+            laserSource.color.g,
+            laserSource.color.b
+          );
+          s.strokeWeight(guideBeam.thickness);
+          s.line(
+            laserSource.x,
+            laserSource.y,
+            reflectedRay.xStartPosition,
+            bottomWall.yPosition
+          );
+
+          s.stroke(guideBeam.color.greyscale);
+          s.strokeWeight(guideBeam.thickness);
+          s.line(
+            reflectedRay.xStartPosition,
+            bottomWall.yPosition,
+            laserVector.x,
+            laserVector.y
+          );
+
           /**
            * The reflection depends of a normal vector;
            * It behaves like a mirror
