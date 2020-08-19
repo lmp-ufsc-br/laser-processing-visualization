@@ -97,9 +97,8 @@ export default class P5Canvas extends React.Component {
        */
       if (s.mouseIsPressed) {
         /** The incidence angle(radians) is equal to the arctan of mouseY position over the mouseX position */
-        const incidenceAngleInRadians = s.atan(
-          laserRayDirection.y / laserRayDirection.x
-        );
+        const incidenceAngleInRadians =
+          s.PI / 2 - s.atan(laserRayDirection.y / laserRayDirection.x);
         /** To convert radians to degrees, just calculate a rule of three */
         const incidenceAngleInDegrees = (180 * incidenceAngleInRadians) / s.PI;
 
