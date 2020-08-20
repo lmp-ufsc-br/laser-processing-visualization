@@ -18,26 +18,25 @@ export default class P5Canvas extends React.Component {
       s.createCanvas(800, 400);
     };
 
-    /** Laser Source */
-    const laserSource = {
-      /** X Coordinate of laser source position */
-      x: 0,
-
-      /** Y Coordinate of laser source position */
-      y: 0,
-
-      /** Diameter of laser source */
-      diameter: 15,
-
-      /** Color of laser source */
-      color: {
-        r: 255,
-        g: 0,
-        b: 0,
-      },
-    };
-
     s.draw = () => {
+      /** Laser Source */
+      const laserSource = {
+        /** X Coordinate of laser source position */
+        x: 0,
+
+        /** Y Coordinate of laser source position */
+        y: 0,
+
+        /** Diameter of laser source */
+        diameter: 15,
+
+        /** Color of laser source */
+        color: {
+          r: 255,
+          g: 0,
+          b: 0,
+        },
+      };
       /** Draw gray background with R, G and B with same value */
       s.background(200);
 
@@ -62,7 +61,10 @@ export default class P5Canvas extends React.Component {
       );
 
       /** Mouse position vector */
-      const laserRayDirection = s.createVector(s.mouseX, s.mouseY);
+      const laserRayDirection = s.createVector(
+        s.mouseX + laserSource.x,
+        s.mouseY + laserSource.y
+      );
 
       /**
        * The vector "laserVector" is the result of the subtraction between the mouse vector and the pos vector;
