@@ -280,7 +280,10 @@ export default class P5Canvas extends React.Component {
             reflectedRay.color.b
           );
           s.strokeWeight(reflectedRay.thickness);
-          s.translate(reflectionBaseVector.x, reflectionBaseVector.y);
+          s.translate(
+            reflectionBaseVector.x + laserSource.x,
+            reflectionBaseVector.y + laserSource.y
+          );
           s.line(0, 0, reflectedLaserVector.x, reflectedLaserVector.y);
         }
       }
