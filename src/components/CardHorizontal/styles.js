@@ -8,8 +8,9 @@ export const Row = styled.div`
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
+  /* margin-right: -15px;
+  margin-left: -15px; */
+  width: 800px;
   margin-bottom: 2rem;
 `;
 

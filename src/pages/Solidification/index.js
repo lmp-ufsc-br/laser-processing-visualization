@@ -1,8 +1,10 @@
 import React from 'react';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import P5Canvas from './P5Canvas';
 import History from './History';
+import 'react-tabs/style/react-tabs.css';
 
-import { Content, TitleContainer, Container, Title } from './styles';
+import { Content, TitleContainer, Container } from './styles';
 
 export default function Solidification() {
   return (
@@ -17,13 +19,20 @@ export default function Solidification() {
           </h3>
         </TitleContainer>
         <Container>
-          <P5Canvas />
+          <Tabs>
+            <TabList id="List">
+              <Tab>Visualização</Tab>
+              <Tab>Histórico</Tab>
+            </TabList>
+
+            <TabPanel>
+              <P5Canvas />
+            </TabPanel>
+            <TabPanel>
+              <History />
+            </TabPanel>
+          </Tabs>
         </Container>
-        <Title>
-          <h2>Histórico:</h2>
-          <hr />
-        </Title>
-        <History />
       </Content>
     </>
   );

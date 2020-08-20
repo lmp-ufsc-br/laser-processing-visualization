@@ -32,6 +32,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin: 10px auto 10px 150px;
 `;
 
 // ------ Other Components ------
