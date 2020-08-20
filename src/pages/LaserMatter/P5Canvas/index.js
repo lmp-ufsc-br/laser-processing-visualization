@@ -139,7 +139,11 @@ export default class P5Canvas extends React.Component {
            */
 
           const reflectedRay = {
-            xStartPosition: (s.mouseX * bottomWall.yPosition) / s.mouseY,
+            xStartPosition:
+              laserSource.x +
+              ((s.mouseX - laserSource.x) *
+                (bottomWall.yPosition - laserSource.y)) /
+                (s.mouseY - laserSource.y),
             thickness: 2,
             color: {
               r: 170,
@@ -147,19 +151,6 @@ export default class P5Canvas extends React.Component {
               b: 0,
             },
           };
-
-          const reflectionStartBaseVector = s.createVector(
-            laserSource.x,
-            laserSource.y
-          );
-          const reflectionEndBaseVector = s.createVector(
-            reflectedRay.xStartPosition,
-            bottomWall.yPosition
-          );
-          const reflectionBaseVector = P5.Vector.sub(
-            reflectionEndBaseVector,
-            reflectionStartBaseVector
-          );
           const guideBeam = {
             thickness: 2,
             color: {
@@ -167,6 +158,7 @@ export default class P5Canvas extends React.Component {
             },
           };
 
+          // Laser Ray
           s.stroke(
             laserSource.color.r,
             laserSource.color.g,
@@ -180,6 +172,17 @@ export default class P5Canvas extends React.Component {
             bottomWall.yPosition
           );
 
+          // Normal line
+          s.stroke(0);
+          s.strokeWeight(0.5);
+          s.line(
+            reflectedRay.xStartPosition,
+            0,
+            reflectedRay.xStartPosition,
+            s.height
+          );
+
+          // Guide Beam
           s.stroke(guideBeam.color.greyscale);
           s.strokeWeight(guideBeam.thickness);
           s.line(
@@ -189,6 +192,72 @@ export default class P5Canvas extends React.Component {
             laserVector.y
           );
 
+          const refractedRayProperties = {
+            refractiveIndex: 1.33,
+            thickness: 2,
+            color: {
+              r: 0,
+              g: 0,
+              b: 255,
+            },
+          };
+
+          const refractiveAngleInRadians = s.asin(
+            s.sin(incidenceAngleInRadians) /
+              refractedRayProperties.refractiveIndex
+          );
+          const refractiveAngleInDegrees =
+            (180 * refractiveAngleInRadians) / s.PI;
+          const xPosition =
+            reflectedRay.xStartPosition +
+            (s.height - bottomWall.yPosition) * s.tan(refractiveAngleInRadians);
+
+          s.strokeWeight(textProperties.edgeThickness);
+          s.fill(textProperties.color.greyscale);
+          s.text(
+            `Ângulo de refração: ${refractiveAngleInDegrees.toFixed(
+              textProperties.decimalPlaces
+            )}`,
+            textProperties.x,
+            370
+          );
+
+          // Refractive Beam
+          s.stroke(
+            refractedRayProperties.color.r,
+            refractedRayProperties.color.g,
+            refractedRayProperties.color.b
+          );
+          s.strokeWeight(refractedRayProperties.thickness);
+          s.line(
+            reflectedRay.xStartPosition,
+            bottomWall.yPosition,
+            xPosition,
+            s.height
+          );
+
+          s.strokeWeight(textProperties.edgeThickness);
+          s.fill(textProperties.color.greyscale);
+          s.text(
+            `Índice de refração: ${refractedRayProperties.refractiveIndex.toFixed(
+              textProperties.decimalPlaces
+            )}`,
+            textProperties.x,
+            270
+          );
+
+          const reflectionStartBaseVector = s.createVector(
+            laserSource.x,
+            laserSource.y
+          );
+          const reflectionEndBaseVector = s.createVector(
+            reflectedRay.xStartPosition,
+            bottomWall.yPosition
+          );
+          const reflectionBaseVector = P5.Vector.sub(
+            reflectionEndBaseVector,
+            reflectionStartBaseVector
+          );
           /**
            * The reflection depends of a normal vector;
            * It behaves like a mirror
