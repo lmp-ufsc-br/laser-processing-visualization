@@ -99,8 +99,10 @@ export default class P5Canvas extends React.Component {
        */
       if (s.mouseIsPressed) {
         /** The incidence angle(radians) is equal to the arctan of mouseY position over the mouseX position */
-        const incidenceAngleInRadians =
-          s.PI / 2 - s.atan(laserRayDirection.y / laserRayDirection.x);
+        const incidenceAngleInRadians = s.atan(
+          (s.mouseX - laserSource.x) / (s.mouseY - laserSource.y)
+        );
+
         /** To convert radians to degrees, just calculate a rule of three */
         const incidenceAngleInDegrees = (180 * incidenceAngleInRadians) / s.PI;
 
@@ -195,7 +197,7 @@ export default class P5Canvas extends React.Component {
           );
 
           const refractedRayProperties = {
-            refractiveIndex: 1.33,
+            refractiveIndex: 5,
             thickness: 2,
             color: {
               r: 0,
@@ -264,7 +266,7 @@ export default class P5Canvas extends React.Component {
            * The reflection depends of a normal vector;
            * It behaves like a mirror
            */
-          const normalVector = s.createVector(0, 1);
+          const normalVector = s.createVector(0, -1);
           /**
            * Variable "reflectedLaserVector" receives laserVector copy, and using the reflect method;
            * the vector is reflected;
