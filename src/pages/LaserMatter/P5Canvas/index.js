@@ -274,6 +274,17 @@ export default class P5Canvas extends React.Component {
           const reflectedLaserVector = reflectionBaseVector.copy();
           reflectedLaserVector.reflect(normalVector);
 
+          /** The magnitude of the reflectedLaserVector extended until the canvas's limits */
+          const completeVectoMag =
+            bottomWall.yPosition / s.sin(s.PI / 2 - incidenceAngleInRadians);
+
+          /** The real magnitude of the reflectedLaserVector */
+          const reflectedLaserVectorMag = s.sqrt(
+            s.sq(reflectedLaserVector.x) + s.sq(reflectedLaserVector.y)
+          );
+
+          const scalarMultiplier = completeVectoMag / reflectedLaserVectorMag;
+
           /** Draw reflected ray */
 
           s.stroke(
@@ -286,7 +297,12 @@ export default class P5Canvas extends React.Component {
             reflectionBaseVector.x + laserSource.x,
             reflectionBaseVector.y + laserSource.y
           );
-          s.line(0, 0, reflectedLaserVector.x, reflectedLaserVector.y);
+          s.line(
+            0,
+            0,
+            scalarMultiplier * reflectedLaserVector.x,
+            scalarMultiplier * reflectedLaserVector.y
+          );
         }
       }
     };
