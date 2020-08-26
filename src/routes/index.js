@@ -6,6 +6,7 @@ import LaserMatter from '../pages/LaserMatter';
 import Dashboard from '../pages/Dashboard';
 import SignIn from '../pages/SignIn';
 import References from '../pages/References';
+import Blog from '../pages/Blog';
 import Resistance from '../pages/Resistance';
 
 export default function Routes() {
@@ -15,6 +16,7 @@ export default function Routes() {
       <Route exact path="/laser-matter" component={LaserMatter} />
       <Route exact path="/resistance" component={Resistance} />
       <Route exact path="/references" component={References} />
+      <Route exact path="/blog" component={Blog} />
       <Route exact path="/dashboard" component={Dashboard} isPrivate />
       <Route exact path="/signin" component={SignIn} isSign />
       <Redirect to="/" />
