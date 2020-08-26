@@ -1,5 +1,5 @@
 import React from 'react';
-import P5Canvas from '../../components/P5Canvas';
+import P5Canvas from './P5Canvas';
 
 import { Content, TitleContainer, Container } from './styles';
 
