@@ -44,6 +44,14 @@ const featuredPosts = [
     image: 'https://source.unsplash.com/random',
     imageText: 'Image Text',
   },
+  {
+    title: 'Featured post',
+    date: 'Nov 12',
+    description:
+      'This is a wider card with supporting text below as a natural lead-in to additional content.',
+    image: 'https://source.unsplash.com/random',
+    imageText: 'Image Text',
+  },
 ];
 
 const sidebar = {
@@ -86,7 +94,7 @@ export default function Blog() {
           </Grid>
           <Grid container spacing={5} className={classes.mainGrid}>
             <Content>
-              <h1>From the firehose</h1>
+              <h6>From the firehose</h6>
               <hr />
               <Laser />
             </Content>
