@@ -2,7 +2,7 @@ import React from 'react';
 
 // import { Container } from './styles';
 
-function Home() {
+function Laser() {
   return (
     <div>
       <h5>Simulação Laser</h5>
@@ -22,8 +22,11 @@ function Home() {
         Etiam porta sem malesuada magna mollis euismod. Cras mattis consectetur
         purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.
       </p>
+      <a href="/">
+        <p>Continue lendo...</p>
+      </a>
     </div>
   );
 }
 
-export default Home;
+export default Laser;

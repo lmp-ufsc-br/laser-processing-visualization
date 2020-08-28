@@ -49,6 +49,17 @@ export const Content = styled.div`
     line-height: 1.5;
     letter-spacing: 0.00938em;
   }
+  a {
+    color: #3f51b5;
+    font-size: 1rem;
+    font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.00938em;
+    :not(:hover) {
+      text-decoration: none;
+    }
+  }
 `;
 
 export const TitleContainer = styled.div`

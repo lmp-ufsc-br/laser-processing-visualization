@@ -10,6 +10,8 @@ import MainFeaturedPost from './MainFeaturedPost';
 import FeaturedPost from './FeaturedPost';
 import Sidebar from './Sidebar';
 import Laser from './laser-matter';
+import Solidification from './solidification';
+import Resistance from './resistance';
 import { Content } from './styles';
 
 const useStyles = makeStyles((theme) => ({
@@ -97,6 +99,8 @@ export default function Blog() {
               <h6>From the firehose</h6>
               <hr />
               <Laser />
+              <Solidification />
+              <Resistance />
             </Content>
             <Sidebar
               title={sidebar.title}
