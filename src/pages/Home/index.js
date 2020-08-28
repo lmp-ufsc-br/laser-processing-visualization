@@ -8,11 +8,9 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import MainFeaturedPost from './MainFeaturedPost';
 import FeaturedPost from './FeaturedPost';
-import Main from './Main';
 import Sidebar from './Sidebar';
-import post1 from './blog-post.md';
-import post2 from './blog-post.2.md';
-import post3 from './blog-post.3.md';
+import Laser from './laser-matter';
+import { Content } from './styles';
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
@@ -47,8 +45,6 @@ const featuredPosts = [
     imageText: 'Image Text',
   },
 ];
-
-const posts = [post1, post2, post3];
 
 const sidebar = {
   title: 'About',
@@ -89,7 +85,11 @@ export default function Blog() {
             ))}
           </Grid>
           <Grid container spacing={5} className={classes.mainGrid}>
-            <Main title="From the firehose" posts={posts} />
+            <Content>
+              <h1>From the firehose</h1>
+              <hr />
+              <Laser />
+            </Content>
             <Sidebar
               title={sidebar.title}
               description={sidebar.description}

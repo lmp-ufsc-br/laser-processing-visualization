@@ -3,7 +3,14 @@ import styled from 'styled-components';
 export const Content = styled.div`
   display: flex;
   flex-direction: column;
-  width: 100%;
+  padding: 20px;
+  flex-grow: 0;
+  max-width: 100%;
+  flex-basis: 100%;
+  @media (min-width: 960px) {
+    max-width: 66.666667%;
+    flex-basis: 66.666667%;
+  }
 `;
 
 export const TitleContainer = styled.div`
