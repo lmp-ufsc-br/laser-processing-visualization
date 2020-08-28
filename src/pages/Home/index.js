@@ -6,13 +6,13 @@ import Container from '@material-ui/core/Container';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
-import MainFeaturedPost from './MainFeaturedPost';
-import FeaturedPost from './FeaturedPost';
+import TitleCard from './TitleCard';
+import ArticleCard from './ArticleCard';
 import Sidebar from './Sidebar';
 import Laser from './laser-matter';
 import Solidification from './solidification';
 import Resistance from './resistance';
-import { Content } from './styles';
+import BlogContent from '../../components/BlogContent';
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const mainFeaturedPost = {
+const TitleContent = {
   title: 'Title of a longer featured blog post',
   description:
     "Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.",
@@ -29,9 +29,9 @@ const mainFeaturedPost = {
   linkText: 'Continue reading…',
 };
 
-const featuredPosts = [
+const ArticleContent = [
   {
-    title: 'Featured post',
+    title: 'Simulação Laser-Matéria',
     date: 'Nov 12',
     description:
       'This is a wider card with supporting text below as a natural lead-in to additional content.',
@@ -39,7 +39,7 @@ const featuredPosts = [
     imageText: 'Image Text',
   },
   {
-    title: 'Post title',
+    title: 'Simulação Microestrutural',
     date: 'Nov 11',
     description:
       'This is a wider card with supporting text below as a natural lead-in to additional content.',
@@ -47,7 +47,7 @@ const featuredPosts = [
     imageText: 'Image Text',
   },
   {
-    title: 'Featured post',
+    title: 'Simulação de Resistência Mecânica',
     date: 'Nov 12',
     description:
       'This is a wider card with supporting text below as a natural lead-in to additional content.',
@@ -88,20 +88,18 @@ export default function Blog() {
       <CssBaseline />
       <Container maxWidth="lg">
         <main>
-          <MainFeaturedPost post={mainFeaturedPost} />
+          <TitleCard post={TitleContent} />
           <Grid container spacing={4}>
-            {featuredPosts.map((post) => (
-              <FeaturedPost key={post.title} post={post} />
+            {ArticleContent.map((post) => (
+              <ArticleCard key={post.title} post={post} />
             ))}
           </Grid>
           <Grid container spacing={5} className={classes.mainGrid}>
-            <Content>
-              <h6>From the firehose</h6>
-              <hr />
+            <BlogContent title="Artigos">
               <Laser />
               <Solidification />
               <Resistance />
-            </Content>
+            </BlogContent>
             <Sidebar
               title={sidebar.title}
               description={sidebar.description}

@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function MainFeaturedPost(props) {
+export default function TitleCard(props) {
   const classes = useStyles();
   const { post } = props;
 
@@ -77,6 +77,6 @@ export default function MainFeaturedPost(props) {
   );
 }
 
-MainFeaturedPost.propTypes = {
+TitleCard.propTypes = {
   post: PropTypes.object,
 };
