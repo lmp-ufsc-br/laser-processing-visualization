@@ -26,7 +26,7 @@ export default function ArticleCard(props) {
   const { post } = props;
 
   return (
-    <Grid item xs={12} md={6}>
+    <Grid item xs={12} md={4}>
       <CardActionArea component="a" href="#">
         <Card className={classes.card}>
           <div className={classes.cardDetails}>
@@ -39,9 +39,6 @@ export default function ArticleCard(props) {
               </Typography>
               <Typography variant="subtitle1" paragraph>
                 {post.description}
-              </Typography>
-              <Typography variant="subtitle1" color="primary">
-                Continue reading...
               </Typography>
             </CardContent>
           </div>

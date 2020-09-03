@@ -13,6 +13,10 @@ import Laser from './laser-matter';
 import Solidification from './solidification';
 import Resistance from './resistance';
 import BlogContent from '../../components/BlogContent';
+import LaserImg from '../../img/laser.png';
+import Micros from '../../img/Micros.png';
+import Deform from '../../img/Deformation.png';
+import LMD from '../../img/Direct.jfif';
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
@@ -21,21 +25,20 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const TitleContent = {
-  title: 'Title of a longer featured blog post',
+  title: 'Simulação de Processamento a Laser',
   description:
     "Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.",
-  image: 'https://source.unsplash.com/random',
+  image: LMD,
   imgText: 'main image description',
-  linkText: 'Continue reading…',
 };
 
 const ArticleContent = [
   {
     title: 'Simulação Laser-Matéria',
-    date: 'Nov 12',
+    date: 'Aug 12',
     description:
       'This is a wider card with supporting text below as a natural lead-in to additional content.',
-    image: 'https://source.unsplash.com/random',
+    image: LaserImg,
     imageText: 'Image Text',
   },
   {
@@ -43,15 +46,15 @@ const ArticleContent = [
     date: 'Nov 11',
     description:
       'This is a wider card with supporting text below as a natural lead-in to additional content.',
-    image: 'https://source.unsplash.com/random',
+    image: Micros,
     imageText: 'Image Text',
   },
   {
-    title: 'Simulação de Resistência Mecânica',
+    title: 'Resistência Mecânica',
     date: 'Nov 12',
     description:
       'This is a wider card with supporting text below as a natural lead-in to additional content.',
-    image: 'https://source.unsplash.com/random',
+    image: Deform,
     imageText: 'Image Text',
   },
 ];
