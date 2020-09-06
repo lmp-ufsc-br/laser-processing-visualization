@@ -8,9 +8,10 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import TitleCard from './TitleCard';
 import Sidebar from './Sidebar';
-import Laser from './laser-matter';
+
 import BlogContent from '../../../../components/BlogContent';
 import LMD from './img/Direct.jfif';
+import Content from './content';
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
@@ -61,7 +62,7 @@ export default function Blog() {
           <TitleCard post={TitleContent} />
           <Grid container spacing={5} className={classes.mainGrid}>
             <BlogContent title="Artigo">
-              <Laser />
+              <Content />
             </BlogContent>
             <Sidebar
               title={sidebar.title}
