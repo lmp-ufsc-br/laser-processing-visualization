@@ -6,15 +6,18 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 /** import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu'; */
-import { Container } from './styles';
+import Container from '@material-ui/core/Container';
 
 const useStyles = makeStyles(() => ({
+  root: {
+    padding: 0,
+    background: '#fafafa',
+    color: '#000',
+  },
+
   title: {
     flexGrow: 1,
-  },
-  tool: {
-    paddingLeft: '50px',
-    paddingRight: '60px',
+    paddign: 0,
   },
 }));
 
@@ -22,15 +25,20 @@ export default function ButtonAppBar() {
   const classes = useStyles();
 
   return (
-    <Container>
-      <AppBar id="appbar" position="static" className={classes.tool}>
-        <Toolbar id="Toolbar">
+    <AppBar
+      id="appbar"
+      position="static"
+      className={classes.root}
+      disableGutters
+    >
+      <Container maxwidth="lg">
+        <Toolbar id="Toolbar" disableGutters>
           <Typography id="text" variant="h6" className={classes.title}>
             LMP
           </Typography>
           <Button color="black">Login</Button>
         </Toolbar>
-      </AppBar>
-    </Container>
+      </Container>
+    </AppBar>
   );
 }
