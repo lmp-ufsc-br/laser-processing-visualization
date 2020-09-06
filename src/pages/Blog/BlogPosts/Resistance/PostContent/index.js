@@ -1,6 +1,6 @@
 import React from 'react';
 import { ContentWrapper } from './styles';
-import Content from './content';
+import Content from './Article';
 
 function BlogContent(props) {
   return (

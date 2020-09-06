@@ -1,8 +1,3 @@
-import React from 'react';
-import Markdown from 'markdown-to-jsx';
-// import feaImg from './img/fea.png';
-
-const content = `
 ##### Introdução
 
 ###### *Objetivo Geral*
@@ -157,14 +152,3 @@ $$
 
 Observando individualmente os valores dos módulos de elasticidade dos materiais utilizados para a simulação, o resultado obtido através do teste é razoável.
 
-`;
-
-function Article() {
-  return (
-    <div className="article">
-      <Markdown>{content}</Markdown>
-    </div>
-  );
-}
-
-export default Article;
