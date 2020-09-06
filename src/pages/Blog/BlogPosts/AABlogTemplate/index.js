@@ -11,7 +11,6 @@ import Sidebar from './Sidebar';
 
 import PostContent from './PostContent';
 import LMD from './img/Direct.jfif';
-import Content from './content';
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
@@ -20,9 +19,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const TitleContent = {
-  title: 'Simulação de efeito XYZ',
+  title: 'Processamento de materiais a laser',
   description:
-    'Desenvolvimento de uma aplicação interativa para visualização de XYZ',
+    'Simulação e processos de fabricação de materiais a laser contínuo e pulsado no Laboratório de Mecânica de Precisão',
   image: LMD,
   imgText: 'main image description',
 };
