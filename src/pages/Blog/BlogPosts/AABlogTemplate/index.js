@@ -30,7 +30,7 @@ const TitleContent = {
 const sidebar = {
   title: 'Autor',
   description:
-    'Artur Della Fávera é estudante de graduação no Laboratório de Mecânica de Precisão desde 2019 e estuda processos de fabricação a Laser.',
+    'Fulano é estudante de graduação no Laboratório de Mecânica de Precisão desde 2019 e atualmente estuda processos de fabricação a Laser.',
   archives: [
     { title: 'March 2020', url: '#' },
     { title: 'February 2020', url: '#' },
