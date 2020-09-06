@@ -7,16 +7,11 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import TitleCard from './TitleCard';
-import ArticleCard from './ArticleCard';
 import Sidebar from './Sidebar';
-import Laser from './laser-matter';
-import Solidification from './solidification';
-import Resistance from './resistance';
-import BlogContent from '../../components/BlogContent';
-import LaserImg from '../../img/laser.png';
-import Micros from '../../img/Micros.png';
-import Deform from '../../img/Deformation.png';
-import LMD from '../../img/Direct.jfif';
+
+import BlogContent from '../../../../components/BlogContent';
+import LMD from './img/Direct.jfif';
+import Content from './content';
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
@@ -25,44 +20,17 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const TitleContent = {
-  title: 'Simulação de Processamento a Laser',
+  title: 'Simulação interativa de óptica geométrica',
   description:
-    "Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.",
+    'Desenvolvimento de uma aplicação interativa para visualização da interação entre um raio de luz e uma superfície qualquer',
   image: LMD,
   imgText: 'main image description',
 };
 
-const ArticleContent = [
-  {
-    title: 'Simulação Laser-Matéria',
-    date: 'Aug 12',
-    description:
-      'This is a wider card with supporting text below as a natural lead-in to additional content.',
-    image: LaserImg,
-    imageText: 'Image Text',
-  },
-  {
-    title: 'Simulação Microestrutural',
-    date: 'Nov 11',
-    description:
-      'This is a wider card with supporting text below as a natural lead-in to additional content.',
-    image: Micros,
-    imageText: 'Image Text',
-  },
-  {
-    title: 'Resistência Mecânica',
-    date: 'Nov 12',
-    description:
-      'This is a wider card with supporting text below as a natural lead-in to additional content.',
-    image: Deform,
-    imageText: 'Image Text',
-  },
-];
-
 const sidebar = {
-  title: 'About',
+  title: 'Autor',
   description:
-    'Etiam porta sem malesuada magna mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.',
+    'Fulano é estudante de graduação no Laboratório de Mecânica de Precisão desde 2019 e atualmente estuda processos de fabricação a Laser.',
   archives: [
     { title: 'March 2020', url: '#' },
     { title: 'February 2020', url: '#' },
@@ -92,16 +60,9 @@ export default function Blog() {
       <Container maxWidth="lg">
         <main>
           <TitleCard post={TitleContent} />
-          <Grid container spacing={4}>
-            {ArticleContent.map((post) => (
-              <ArticleCard key={post.title} post={post} />
-            ))}
-          </Grid>
           <Grid container spacing={5} className={classes.mainGrid}>
-            <BlogContent title="Artigos">
-              <Laser />
-              <Solidification />
-              <Resistance />
+            <BlogContent title="Artigo">
+              <Content />
             </BlogContent>
             <Sidebar
               title={sidebar.title}
