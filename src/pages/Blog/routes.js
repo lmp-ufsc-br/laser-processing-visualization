@@ -4,7 +4,7 @@ import Route from '../../routes/Route';
 import Home from '../Home';
 import Template from './BlogPosts/Template';
 import LaserMatter from './BlogPosts/LaserMatter';
-import Resistance from './BlogPosts/Resistance2';
+import Resistance from './BlogPosts/Resistance';
 
 export default function Routes() {
   return (
