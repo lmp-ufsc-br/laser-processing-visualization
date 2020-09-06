@@ -12,6 +12,10 @@ const useStyles = makeStyles(() => ({
   title: {
     flexGrow: 1,
   },
+  tool: {
+    paddingLeft: '50px',
+    paddingRight: '60px',
+  },
 }));
 
 export default function ButtonAppBar() {
@@ -19,7 +23,7 @@ export default function ButtonAppBar() {
 
   return (
     <Container>
-      <AppBar id="appbar" position="static">
+      <AppBar id="appbar" position="static" className={classes.tool}>
         <Toolbar id="Toolbar">
           <Typography id="text" variant="h6" className={classes.title}>
             LMP
