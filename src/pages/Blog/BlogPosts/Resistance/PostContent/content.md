@@ -1,8 +1,3 @@
-import React from 'react';
-import Markdown from 'markdown-to-jsx';
-// import feaImg from './img/fea.png';
-
-const content = `
 ##### Introdução
 
 ###### *Objetivo Geral*
@@ -130,31 +125,30 @@ COLOCAR GIF DA DEFORMAÇÃO
 
 Com o resultado da simulação nos informando o valor da deformação média, é possível calcular o módulo de elasticidade equivalente do corpo de prova, por meio das fórmulas:
 
+
+<!--
 $$
 \sigma=E\cdot\varepsilon
 $$
 $$
 E=\frac{\sigma}{\varepsilon}=\frac{F\cdot l o}{Ao\cdot\mathrm{\Delta l}}
 $$
+-->
+
+[EQUAÇÃO AQUI]
 
 Onde F é força, lo é a altura inicial do corpo de prova, Ao a área inicial da superfície a qual está sendo aplicada a força e l  a  variação da altura do corpo de prova.
 
 Aplicando a fórmula, temos:
 
+
+[EQUAÇÃO AQUI]
+
+<!--
 $$
 Eeq=(500\ N\cdot2\ mm)/(2\ mm²⋅0,0053934 mm)=92705,90  N/mm²=92,706 GPa
 $$
+-->
 
 Observando individualmente os valores dos módulos de elasticidade dos materiais utilizados para a simulação, o resultado obtido através do teste é razoável.
 
-`;
-
-function Article() {
-  return (
-    <div className="article">
-      <Markdown>{content}</Markdown>
-    </div>
-  );
-}
-
-export default Article;
