@@ -1,5 +1,6 @@
 import React from 'react';
-import P5Canvas from './P5Canvas';
+//import P5Canvas from './P5Canvas';
+import Presimulation from './presimulationmarkd.js';
 
 import { Content, TitleContainer, Container } from './styles';
 
@@ -16,7 +17,7 @@ export default function Resistance() {
           </h3>
         </TitleContainer>
         <Container>
-          <P5Canvas />
+          <Presimulation />
         </Container>
       </Content>
     </>
