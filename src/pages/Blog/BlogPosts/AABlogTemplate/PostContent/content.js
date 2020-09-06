@@ -1,8 +1,8 @@
 import React from 'react';
 import Markdown from 'markdown-to-jsx';
-import laserImg from './img/surface.jpg';
-import microstructureImg from './img/microstructural.jpg';
-import feaImg from './img/fea.png';
+import laserImg from '../img/surface.jpg';
+import microstructureImg from '../img/microstructural.jpg';
+import feaImg from '../img/fea.png';
 
 const content = `
 <!-- Escreva seu artigo abaixo, usando markdown e HTML -->
@@ -115,11 +115,7 @@ malesuada augue.
 `;
 
 function Article() {
-  return (
-    <div className="article">
-      <Markdown>{content}</Markdown>
-    </div>
-  );
+  return <Markdown>{content}</Markdown>;
 }
 
 export default Article;

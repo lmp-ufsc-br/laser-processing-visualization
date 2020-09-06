@@ -4,12 +4,12 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 import GitHubIcon from '@material-ui/icons/GitHub';
-import FacebookIcon from '@material-ui/icons/Facebook';
-import TwitterIcon from '@material-ui/icons/Twitter';
+import InstagramIcon from '@material-ui/icons/Instagram';
+import LinkdedInIcon from '@material-ui/icons/LinkedIn';
 import TitleCard from './TitleCard';
 import Sidebar from './Sidebar';
 
-import BlogContent from '../../../../components/BlogContent';
+import PostContent from './PostContent';
 import LMD from './img/Direct.jfif';
 import Content from './content';
 
@@ -20,9 +20,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const TitleContent = {
-  title: 'Simulação interativa de óptica geométrica',
+  title: 'Simulação de efeito XYZ',
   description:
-    'Desenvolvimento de uma aplicação interativa para visualização da interação entre um raio de luz e uma superfície qualquer',
+    'Desenvolvimento de uma aplicação interativa para visualização de XYZ',
   image: LMD,
   imgText: 'main image description',
 };
@@ -32,22 +32,31 @@ const sidebar = {
   description:
     'Fulano é estudante de graduação no Laboratório de Mecânica de Precisão desde 2019 e atualmente estuda processos de fabricação a Laser.',
   archives: [
-    { title: 'March 2020', url: '#' },
-    { title: 'February 2020', url: '#' },
-    { title: 'January 2020', url: '#' },
-    { title: 'November 1999', url: '#' },
-    { title: 'October 1999', url: '#' },
-    { title: 'September 1999', url: '#' },
-    { title: 'August 1999', url: '#' },
-    { title: 'July 1999', url: '#' },
-    { title: 'June 1999', url: '#' },
-    { title: 'May 1999', url: '#' },
-    { title: 'April 1999', url: '#' },
+    { title: 'Março 2020', url: '#' },
+    { title: 'Fevereiro 2020', url: '#' },
+    { title: 'Janeiro 2020', url: '#' },
+    { title: 'Dezembro 2020', url: '#' },
+    { title: 'Novembro 2019', url: '#' },
+    { title: 'Outubro 2019', url: '#' },
+    { title: 'Setembro 2019', url: '#' },
+    { title: 'Agosto 2019', url: '#' },
+    { title: 'Julho 2019', url: '#' },
+    { title: 'Junho 2019', url: '#' },
+    { title: 'Maio 2019', url: '#' },
+    { title: 'Abril 2019', url: '#' },
   ],
   social: [
-    { name: 'GitHub', icon: GitHubIcon },
-    { name: 'Twitter', icon: TwitterIcon },
-    { name: 'Facebook', icon: FacebookIcon },
+    { name: 'GitHub', icon: GitHubIcon, url: 'https://github.com/lmp-ufsc-br' },
+    {
+      name: 'LinkedIn',
+      icon: LinkdedInIcon,
+      url: 'https://www.linkedin.com/company/precision-mechanics-laboratory',
+    },
+    {
+      name: 'Instagram',
+      icon: InstagramIcon,
+      url: 'https://www.instagram.com/lmp.ufsc/',
+    },
   ],
 };
 
@@ -61,9 +70,7 @@ export default function Blog() {
         <main>
           <TitleCard post={TitleContent} />
           <Grid container spacing={5} className={classes.mainGrid}>
-            <BlogContent title="Artigo">
-              <Content />
-            </BlogContent>
+            <PostContent title="Desenvolvimento de simulação preliminar XYZ" />
             <Sidebar
               title={sidebar.title}
               description={sidebar.description}
