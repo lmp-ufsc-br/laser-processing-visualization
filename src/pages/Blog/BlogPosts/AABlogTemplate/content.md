@@ -1,5 +1,3 @@
-
-
 ##### Simulação Laser
 
 Introdução sobre o conteúdo. Cum sociis natoque penatibus et magnis dis

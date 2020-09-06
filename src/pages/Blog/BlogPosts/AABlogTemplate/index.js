@@ -12,7 +12,6 @@ import Sidebar from './Sidebar';
 import BlogContent from '../../../../components/BlogContent';
 import LMD from './img/Direct.jfif';
 import Content from './content';
-import laserImg from './laser.png';
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
@@ -31,7 +30,7 @@ const TitleContent = {
 const sidebar = {
   title: 'Autor',
   description:
-    'Artur Della Fávera é estudante de graduação no Laboratório de Mecânica de Precisão desde 2019 e estuda processos de fabricação a Laser.',
+    'Fulano é estudante de graduação no Laboratório de Mecânica de Precisão desde 2019 e atualmente estuda processos de fabricação a Laser.',
   archives: [
     { title: 'March 2020', url: '#' },
     { title: 'February 2020', url: '#' },
@@ -64,13 +63,6 @@ export default function Blog() {
           <Grid container spacing={5} className={classes.mainGrid}>
             <BlogContent title="Artigo">
               <Content />
-              <img src={laserImg} />
-              <img
-                style={{
-                  maxWidth: '100%',
-                }}
-                src="https://miro.medium.com/max/1400/0*lzRmzAy5OICef7rK.png"
-              />
             </BlogContent>
             <Sidebar
               title={sidebar.title}
