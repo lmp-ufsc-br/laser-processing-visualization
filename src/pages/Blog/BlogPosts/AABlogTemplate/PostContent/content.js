@@ -115,11 +115,7 @@ malesuada augue.
 `;
 
 function Article() {
-  return (
-    <div className="article">
-      <Markdown>{content}</Markdown>
-    </div>
-  );
+  return <Markdown>{content}</Markdown>;
 }
 
 export default Article;
