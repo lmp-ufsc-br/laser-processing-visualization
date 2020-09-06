@@ -12,6 +12,7 @@ import Sidebar from './Sidebar';
 import BlogContent from '../../../../components/BlogContent';
 import LMD from './img/Direct.jfif';
 import Content from './content';
+import laserImg from './laser.png';
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
@@ -63,6 +64,13 @@ export default function Blog() {
           <Grid container spacing={5} className={classes.mainGrid}>
             <BlogContent title="Artigo">
               <Content />
+              <img src={laserImg} />
+              <img
+                style={{
+                  maxWidth: '100%',
+                }}
+                src="https://miro.medium.com/max/1400/0*lzRmzAy5OICef7rK.png"
+              />
             </BlogContent>
             <Sidebar
               title={sidebar.title}
