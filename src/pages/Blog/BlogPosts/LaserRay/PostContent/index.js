@@ -10,9 +10,7 @@ function BlogContent(props) {
       <h6>{props.title}</h6>
       <hr />
       <Intro />
-      <div id="myCanvas">
-        <P5Canvas />
-      </div>
+      <P5Canvas />
       <Content />
     </ContentWrapper>
   );

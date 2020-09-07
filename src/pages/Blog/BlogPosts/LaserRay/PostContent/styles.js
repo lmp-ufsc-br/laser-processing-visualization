@@ -7,6 +7,11 @@ export const ContentWrapper = styled.div`
   flex-grow: 0;
   max-width: 100%;
   flex-basis: 100%;
+
+  pre {
+    overflow-x: scroll;
+  }
+
   @media (min-width: 960px) {
     max-width: 66.666667%;
     flex-basis: 66.666667%;
