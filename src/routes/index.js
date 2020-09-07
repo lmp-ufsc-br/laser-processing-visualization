@@ -6,6 +6,7 @@ import Dashboard from '../pages/Dashboard';
 import SignIn from '../pages/SignIn';
 import References from '../pages/References';
 import Blog from '../pages/Blog';
+import NextBlog from '../pages/NextBlog';
 
 import BlogRoutes from '../pages/Blog/routes';
 
@@ -13,6 +14,7 @@ export default function Routes() {
   return (
     <Switch>
       <Route exact path="/" component={Home} />
+      <Route path="/next-blog" component={NextBlog} />
       <BlogRoutes />
       <Route exact path="/references" component={References} />
       <Route exact path="/blog" component={Blog} />

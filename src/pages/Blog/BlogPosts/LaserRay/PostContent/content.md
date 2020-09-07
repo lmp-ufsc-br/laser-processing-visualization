@@ -35,7 +35,11 @@ Figura 2 - Esboço do esquema para cálculo de subtração de vetores
 
 Nesse processo utilizou-se métodos do p5.Js como createVector e p5.Vector.sub para a realização das operações com vetores. Além disso, usou-se um condicional if para estipular que o raio Laser fosse disparado apenas quando houvesse um clique no mouse.
 
+
+
 ```js
+
+
   Sketch = (s) => {
     s.setup = () => {
       s.createCanvas(400, 400);
