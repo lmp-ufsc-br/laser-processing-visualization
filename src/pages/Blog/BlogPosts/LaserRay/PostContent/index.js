@@ -1,8 +1,10 @@
 import React from 'react';
 import { ContentWrapper } from './styles';
-import Content from './Article';
+import ArticleFirstPart from './ArticleFirstPart';
 import Intro from './ArticleIntro';
-import P5Canvas from './P5Canvas';
+import ArticleSecondPart from './ArticleSecondPart';
+import CurrentCanvas from './P5Canvas/CurrentCanvas';
+import ExampleCanvas1 from './P5Canvas/ExampleCanvas1';
 
 function BlogContent(props) {
   return (
@@ -10,8 +12,10 @@ function BlogContent(props) {
       <h6>{props.title}</h6>
       <hr />
       <Intro />
-      <P5Canvas />
-      <Content />
+      <CurrentCanvas />
+      <ArticleFirstPart />
+      <ExampleCanvas1 />
+      <ArticleSecondPart />
     </ContentWrapper>
   );
 }
