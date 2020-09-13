@@ -28,9 +28,9 @@ const TitleContent = {
 };
 
 const sidebar = {
-  title: 'Autor',
+  title: 'Autores',
   description:
-    'Fulano é estudante de graduação no Laboratório de Mecânica de Precisão desde 2019 e atualmente estuda processos de fabricação a Laser.',
+    'Luam Gabriel Maul e Calil Amaral',
   archives: [
     { title: 'Março 2020', url: '#' },
     { title: 'Fevereiro 2020', url: '#' },
