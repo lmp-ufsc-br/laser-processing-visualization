@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Markdown from 'markdown-to-jsx';
-import content from './content.md';
+import content from './firstcontent.md';
 
-class Article extends Component {
+class ArticleFirstPart extends Component {
   constructor(props) {
     super(props);
     this.state = { md: '' };
@@ -21,4 +21,4 @@ class Article extends Component {
   }
 }
 
-export default Article;
+export default ArticleFirstPart;
