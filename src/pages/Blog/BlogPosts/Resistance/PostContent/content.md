@@ -56,7 +56,8 @@ tensão de tração.
 Inicialmente foi necessário modelar o corpo de prova, para isso foi utilizado o software CAD OnShape. Distribuímos dentro das dimensões solicitadas (2mm x 1mm x 2mm) 15 grãos, sendo estes não uniformes e poligonais com ângulos não retos, como pode-se visualizar na Figura 1.
 
 <img alt="Modelo CAD" title="Modelo CAD" style="width: 100%" src="https://trello-attachments.s3.amazonaws.com/5c7e19a8679c4b3e46bd66ee/5f314f8553e2fe83be5a5618/20b86bc7957e870e7d2a2a4d9159c684/isometric_specimen.png"/><br/>
-Figura 1 - Vista isométrica corpo de prova
+
+<center> Figura 1 - Vista isométrica corpo de prova </center>
 
 ###### *Simulação*
 
@@ -86,11 +87,11 @@ Podemos visualizar na Figura 2 como estas propriedades de cada material são exi
 
 <img alt="Propriedades do Magnésio" title="Propriedades do Magnésio" style="width: 100%" src="https://trello-attachments.s3.amazonaws.com/5f314f8553e2fe83be5a5618/642x339/b3e9d36274b8da3404fb414c31d80bc6/magnesium_alloy_properties.png"/><br/>
 
-Figura 2 - Propriedades da Liga de Magnésio
+<center> Figura 2 - Propriedades da Liga de Magnésio </center>
 
 As propriedades dos outros materiais selecionados estão descritas na Tabela 1.
 
-Tabela 1 - Propriedades mecânicas
+<center> Tabela 1 - Propriedades mecânicas </center>
 
 | Property | Structural Steel | Aluminum Alloy | Gray Cast Iron | Copper Alloy | Stainless Steel | Unidades |
 |--|--|--|--|--|--|--|
@@ -105,7 +106,7 @@ A próxima etapa foi de importar a geometria modelada para o projeto do Ansys e 
 <img alt="Propriedades do Magnésio" title="Propriedades do Magnésio" style="width: 100%" src="https://trello-attachments.s3.amazonaws.com/5c7e19a8679c4b3e46bd66ee/5f314f8553e2fe83be5a5618/1d10a0ef4c47920a0d3f6ecb0af0fb68/mesh_ansys.png"/><br/>
 
 
-Figura 3 - Malha padrão Ansys
+<center> Figura 3 - Malha padrão Ansys </center>
 
 Por fim, os últimos parâmetros que precisamos inserir são as forças envolvidas
 na simulação. Para isso, fixamos a superfície inferior do corpo de prova e
@@ -113,7 +114,8 @@ adicionamos na superfície superior uma força de 500N no sentido positivo do ei
 Z, demonstrado na Figura 4.
 
 <img alt="Forças aplicadas" title="Forças aplicadas" style="width: 100%" src="https://trello-attachments.s3.amazonaws.com/5c7e19a8679c4b3e46bd66ee/5f314f8553e2fe83be5a5618/c305b163a0373395ebd9f6d2bbc7826f/forces.png"/>
-Figura 4 - Forças aplicadas
+
+<center> Figura 4 - Forças aplicadas </center>
 
 Com todos os parâmetros definidos, selecionamos quais as simulações que serão calculadas. Para obtermos o resultado que desejamos, executaremos apenas a simulação de deformação direcional no sentido positivo do eixo Z.
 
@@ -135,14 +137,16 @@ E=\frac{\sigma}{\varepsilon}=\frac{F\cdot l o}{Ao\cdot\mathrm{\Delta l}}
 $$
 -->
 
-[EQUAÇÃO AQUI]
+<center><img alt="Eq1" title="Eq1" style="width: 20%" src="https://trello-attachments.s3.amazonaws.com/5f314f8553e2fe83be5a5618/130x61/39cc0a4f1b874fea6184cb5b6e6deee7/eq_1.png"/> <br/>
+
+<img alt="Eq2" title="Eq2" style="width: 20%" src="https://trello-attachments.s3.amazonaws.com/5f314f8553e2fe83be5a5618/161x67/500c363dd2a1fb63c45459242d1d2780/eq_2.png"/></center>
 
 Onde F é força, lo é a altura inicial do corpo de prova, Ao a área inicial da superfície a qual está sendo aplicada a força e l  a  variação da altura do corpo de prova.
 
 Aplicando a fórmula, temos:
 
 
-[EQUAÇÃO AQUI]
+<center><img alt="Eq3" title="Eq3" style="width: 100%" src="https://trello-attachments.s3.amazonaws.com/5f314f8553e2fe83be5a5618/626x94/87cf1fc354e88a8c50c373e74369aac6/eq_3.png"/></center>
 
 <!--
 $$

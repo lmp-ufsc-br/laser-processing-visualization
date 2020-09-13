@@ -11,6 +11,7 @@ import Sidebar from './Sidebar';
 
 import PostContent from './PostContent';
 import LMD from './img/Direct.jfif';
+import IsoModel from './img/iso_model.png';
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
@@ -22,7 +23,7 @@ const TitleContent = {
   title: 'Processamento de materiais a laser',
   description:
     'Simulação e processos de fabricação de materiais a laser contínuo e pulsado no Laboratório de Mecânica de Precisão',
-  image: LMD,
+  image: IsoModel,
   imgText: 'main image description',
 };
 
