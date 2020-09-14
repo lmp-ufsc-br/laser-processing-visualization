@@ -11,7 +11,6 @@ import Sidebar from './Sidebar';
 
 import PostContent from './PostContent';
 import LMD from './img/Direct.jfif';
-import IsoModel from './img/iso_model.png';
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
@@ -20,16 +19,19 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const TitleContent = {
-  title: 'Simulação estrutural',
+  title: 'Simulação estrutural preliminar',
   description:
-    'Simulação estrutural preliminar do comportamento de um corpo não homogêneo, submetido a um esforço uniaxial de tração',
-  image: IsoModel,
+    'Simulação preliminar do comportamento de um corpo não homogêneo, submetido a um esforço uniaxial de tração',
+  image:
+    'https://trello-attachments.s3.amazonaws.com/5f314f8553e2fe83be5a5618/760x486/8febf5fb07641c313dc2adee1a0d4ee0/image.png',
   imgText: 'main image description',
 };
 
 const sidebar = {
   title: 'Autores',
-  description: 'Luam Gabriel Maul e Calil Amaral',
+  description: `Maul, L. G., graduando em Engenharia Mecânica e estudante de iniciação
+     científica no Laboratório de Mecânica de Precisão;
+     Amaral, C., pós-graduando em Engenharia Mecânica, mestrando no mesmo laboratório.`,
   archives: [
     { title: 'Março 2020', url: '#' },
     { title: 'Fevereiro 2020', url: '#' },
