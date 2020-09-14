@@ -3,7 +3,7 @@ import P5 from 'p5';
 
 import { Container } from './styles';
 
-export default class P5Canvas extends React.Component {
+export default class CurrentCanvas extends React.Component {
   constructor(props) {
     super(props);
     this.myRef = React.createRef();

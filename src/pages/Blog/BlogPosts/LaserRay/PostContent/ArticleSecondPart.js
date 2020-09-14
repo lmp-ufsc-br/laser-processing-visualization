@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import Markdown from 'markdown-to-jsx';
-import intro from './introcontent.md';
+import content from './secondcontent.md';
 
-class Article extends Component {
+class FirstPartArticle extends Component {
   constructor(props) {
     super(props);
     this.state = { md: '' };
   }
 
   componentDidMount() {
-    fetch(intro)
+    fetch(content)
       .then((res) => res.text())
       .then((md) => {
         this.setState({ md });
@@ -21,4 +21,4 @@ class Article extends Component {
   }
 }
 
-export default Article;
+export default FirstPartArticle;

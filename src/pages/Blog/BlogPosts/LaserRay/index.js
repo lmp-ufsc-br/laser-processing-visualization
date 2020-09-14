@@ -19,17 +19,20 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const TitleContent = {
-  title: 'Processamento de materiais a laser',
+  title: 'Simulação interativa',
   description:
-    'Simulação e processos de fabricação de materiais a laser contínuo e pulsado no Laboratório de Mecânica de Precisão',
-  image: LMD,
+    'Simulação da interação entre raio laser e superfície plana na divisa entre meios de diferentes índices de refração ',
+  image:
+    'https://www.jagranjosh.com/imported/images/E/Articles/JEE_ray_optics.webp',
   imgText: 'main image description',
 };
 
 const sidebar = {
-  title: 'Autor',
-  description:
-    'Fulano é estudante de graduação no Laboratório de Mecânica de Precisão desde 2019 e atualmente estuda processos de fabricação a Laser.',
+  title: 'Autores',
+  description: `Artur Della Favera é estudante de graduação em Engenharia Mecânica, atua
+    no Laboratório de Mecânica de Precisão desde 2019.
+     Atualmente estuda processos de fabricação a Laser juntamente com o co-autor Calil Amaral, pós-graduando em
+     Engenharia Mecânica no mesmo laboratório.`,
   archives: [
     { title: 'Março 2020', url: '#' },
     { title: 'Fevereiro 2020', url: '#' },
