@@ -48,6 +48,7 @@ export const ContentWrapper = styled.div`
     font-weight: 400;
     line-height: 1.5;
     letter-spacing: 0.00938em;
+    text-align: justify;
   }
   a {
     color: #3f51b5;

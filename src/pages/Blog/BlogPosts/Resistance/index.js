@@ -19,17 +19,19 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const TitleContent = {
-  title: 'Processamento de materiais a laser',
+  title: 'Simulação estrutural preliminar',
   description:
-    'Simulação e processos de fabricação de materiais a laser contínuo e pulsado no Laboratório de Mecânica de Precisão',
-  image: LMD,
+    'Simulação preliminar do comportamento de um corpo não homogêneo, submetido a um esforço uniaxial de tração',
+  image:
+    'https://trello-attachments.s3.amazonaws.com/5f314f8553e2fe83be5a5618/760x486/8febf5fb07641c313dc2adee1a0d4ee0/image.png',
   imgText: 'main image description',
 };
 
 const sidebar = {
-  title: 'Autor',
-  description:
-    'Fulano é estudante de graduação no Laboratório de Mecânica de Precisão desde 2019 e atualmente estuda processos de fabricação a Laser.',
+  title: 'Autores',
+  description: `Maul, L. G., graduando em Engenharia Mecânica e estudante de iniciação
+     científica no Laboratório de Mecânica de Precisão;
+     Amaral, C., pós-graduando em Engenharia Mecânica, mestrando no mesmo laboratório.`,
   archives: [
     { title: 'Março 2020', url: '#' },
     { title: 'Fevereiro 2020', url: '#' },
