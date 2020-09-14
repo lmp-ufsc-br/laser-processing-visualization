@@ -28,9 +28,11 @@ const TitleContent = {
 };
 
 const sidebar = {
-  title: 'Autor',
-  description:
-    'Artur Della Favera é estudante de graduação em Engenharia Mecânica, atua no Laboratório de Mecânica de Precisão desde 2019 e atualmente estuda processos de fabricação a Laser.',
+  title: 'Autores',
+  description: `Artur Della Favera é estudante de graduação em Engenharia Mecânica, atua
+    no Laboratório de Mecânica de Precisão desde 2019.
+     Atualmente estuda processos de fabricação a Laser juntamente com o co-autor Calil Amaral, pós-graduando em
+     Engenharia Mecânica no mesmo laboratório.`,
   archives: [
     { title: 'Março 2020', url: '#' },
     { title: 'Fevereiro 2020', url: '#' },
