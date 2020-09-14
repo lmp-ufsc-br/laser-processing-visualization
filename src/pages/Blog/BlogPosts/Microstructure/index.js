@@ -19,17 +19,17 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const TitleContent = {
-  title: 'Simulação estrutural preliminar',
+  title: 'Visualização de grãos',
   description:
-    'Simulação preliminar do comportamento de um corpo não homogêneo, submetido a um esforço uniaxial de tração',
+    'Estudo alternativas para utilização de ferramenta iterativa de visualização do crescimento de grãos',
   image:
-    'https://trello-attachments.s3.amazonaws.com/5f314f8553e2fe83be5a5618/760x486/8febf5fb07641c313dc2adee1a0d4ee0/image.png',
+    'https://trello-attachments.s3.amazonaws.com/5c7e19a8679c4b3e46bd66ee/5f58254dfc4a193807fa3cf5/8437307eac5b61312ae7407a1a7270b8/image.png',
   imgText: 'main image description',
 };
 
 const sidebar = {
   title: 'Autores',
-  description: `Luam Maul é estudante de graduação em Engenharia Mecânica, atua
+  description: `Bruno Weber de Castro é estudante de graduação em Engenharia Mecânica, atua
   no Laboratório de Mecânica de Precisão desde 2019.
    Atualmente estuda processos de fabricação a Laser juntamente com o co-autor Calil Amaral, pós-graduando em
    Engenharia Mecânica no mesmo laboratório.`,
