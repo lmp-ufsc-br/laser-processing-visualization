@@ -12,6 +12,9 @@ Calcular o módulo de elasticidade equivalente do corpo de prova;
 Comparar o resultado obtido com as propriedades mecânicas das matérias primas que
 formam o material compósito;
 
+<img alt="Modelo CAD" title="Modelo CAD" style="width: 100%" src="https://trello-attachments.s3.amazonaws.com/5f314f8553e2fe83be5a5618/600x256/de44391af4670395fbc202466080ad44/stress.gif"/><br/>
+
+
 ##### Materiais e métodos
 
 O ambiente escolhido para modelar o corpo de prova foi o software CAD Onshape. Para
@@ -107,6 +110,7 @@ A próxima etapa foi de importar a geometria modelada para o projeto do Ansys e 
 
 
 <center> Figura 3 - Malha padrão Ansys </center>
+<br/>
 
 Por fim, os últimos parâmetros que precisamos inserir são as forças envolvidas
 na simulação. Para isso, fixamos a superfície inferior do corpo de prova e
@@ -116,6 +120,8 @@ Z, demonstrado na Figura 4.
 <img alt="Forças aplicadas" title="Forças aplicadas" style="width: 100%" src="https://trello-attachments.s3.amazonaws.com/5c7e19a8679c4b3e46bd66ee/5f314f8553e2fe83be5a5618/c305b163a0373395ebd9f6d2bbc7826f/forces.png"/>
 
 <center> Figura 4 - Forças aplicadas </center>
+<br/>
+
 
 Com todos os parâmetros definidos, selecionamos quais as simulações que serão calculadas. Para obtermos o resultado que desejamos, executaremos apenas a simulação de deformação direcional no sentido positivo do eixo Z.
 
@@ -123,7 +129,7 @@ Com todos os parâmetros definidos, selecionamos quais as simulações que serã
 
 Concluída a simulação, os resultados obtidos através dela foram de uma deformação máxima de 0,0064922mm e mínima de 0,0043941mm. O valor médio de deformação foi de 0,0053934mm. Abaixo visualizamos uma animação da simulação.
 
-COLOCAR GIF DA DEFORMAÇÃO
+<img alt="Modelo CAD" title="Modelo CAD" style="width: 100%" src="https://trello-attachments.s3.amazonaws.com/5f314f8553e2fe83be5a5618/600x256/5a4bc79bd6a8511b2d69ba49a68cb9bb/deformation.gif"/><br/>
 
 Com o resultado da simulação nos informando o valor da deformação média, é possível calcular o módulo de elasticidade equivalente do corpo de prova, por meio das fórmulas:
 

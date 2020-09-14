@@ -20,17 +20,16 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const TitleContent = {
-  title: 'Processamento de materiais a laser',
+  title: 'Simulação estrutural',
   description:
-    'Simulação e processos de fabricação de materiais a laser contínuo e pulsado no Laboratório de Mecânica de Precisão',
+    'Simulação estrutural preliminar do comportamento de um corpo não homogêneo, submetido a um esforço uniaxial de tração',
   image: IsoModel,
   imgText: 'main image description',
 };
 
 const sidebar = {
   title: 'Autores',
-  description:
-    'Luam Gabriel Maul e Calil Amaral',
+  description: 'Luam Gabriel Maul e Calil Amaral',
   archives: [
     { title: 'Março 2020', url: '#' },
     { title: 'Fevereiro 2020', url: '#' },
