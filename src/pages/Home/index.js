@@ -25,9 +25,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const TitleContent = {
-  title: 'Simulação de Processamento a Laser',
+  title: 'Fabricação a Laser',
   description:
-    "Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.",
+    'Simulação e investigação de processos de fabricação a Laser no Laboratório de Mecânica de Precisão',
   image: LMD,
   imgText: 'main image description',
 };
