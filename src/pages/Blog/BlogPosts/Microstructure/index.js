@@ -10,7 +10,6 @@ import TitleCard from './TitleCard';
 import Sidebar from './Sidebar';
 
 import PostContent from './PostContent';
-import LMD from './img/Direct.jfif';
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
