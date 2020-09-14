@@ -7,6 +7,7 @@ function BlogContent(props) {
     <ContentWrapper>
       <h6>{props.title}</h6>
       <hr />
+
       <Content />
     </ContentWrapper>
   );
