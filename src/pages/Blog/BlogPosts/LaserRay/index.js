@@ -19,10 +19,11 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const TitleContent = {
-  title: 'Processamento de materiais a laser',
+  title: 'Simulação interativa',
   description:
-    'Simulação e processos de fabricação de materiais a laser contínuo e pulsado no Laboratório de Mecânica de Precisão',
-  image: LMD,
+    'Simulação da interação entre raio laser e superfície plana na divisa entre meios de diferentes índices de refração ',
+  image:
+    'https://www.jagranjosh.com/imported/images/E/Articles/JEE_ray_optics.webp',
   imgText: 'main image description',
 };
 
