@@ -22,7 +22,7 @@ function Solidification() {
         cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo
         sit amet risus.
       </p>
-      <a href="/">
+      <a href="/microstructure">
         <p>Continue lendo...</p>
       </a>
     </div>
