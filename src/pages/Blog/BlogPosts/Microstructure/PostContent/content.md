@@ -49,4 +49,16 @@ que é observado em diversas morfologias microestruturais em metais.
 
 A função é caracterizada por um vetor V[n] de pontos distribuídos num espaço bi ou tridimensional e, de acordo com a distância calculada entre cada ponto da tela até o enésimo ponto de V mais próximo, define-se a coloração e intensidade de cor do ponto.
 
-Partindo do código original de ruído Worlei desenvolvida por <github do canal>, foram feitas alterações para que cada ponto gerado pelo código correspondesse a um “núcleo” de fase sólida distantes do plano xy(correspondente à tela) em z. Ao longo da execução do programa os pontos decrescem seu valor em z, aproximando-os do plano xy e assim reproduzindo o efeito de crescimento de grão.
+Partindo do [código original](https://github.com/CodingTrain/website/tree/master/challenges/coding-in-the-cabana/004_worley_noise) de ruído Worlei desenvolvida por [CodingTrain](https://github.com/CodingTrain), foram feitas alterações para que cada ponto gerado pelo código correspondesse a um “núcleo” de fase sólida distantes do plano xy(correspondente à tela) em z. Ao longo da execução do programa os pontos decrescem seu valor em z, aproximando-os do plano xy e assim reproduzindo o efeito de crescimento de grão.
+
+A primeira parte do código é responsável por criar a tela nas dimensões desejadas e declarar um vetor de pontos, distribuindo-os aleatoriamente pelo plano xy.
+
+<img alt="Worley Noise" title="Worley Noise" style="width: 53.56%" src="https://trello-attachments.s3.amazonaws.com/5f58254dfc4a193807fa3cf5/616x199/08f5b0a1c3004f7f3b2197a14205a6ff/parte1.png"/><br/>
+
+Em seguida, inicia-se a varredura de cada um dos pixels da tela, calculando e armazenando a distância deste até os pontos do vetor (observe que nesta etapa da rotina o valor da coordenada z decrece com o tempo, utilizando a contagem de atualização dos quadros FrameCount). Então, ordena-se as distâncias calculadas, permitindo que se defina a intensidade da coloração do pixel de acordo com a sua distância ao ponto mais proximo.
+
+<img alt="Worley Noise" title="Worley Noise" style="width: 100%" src="https://trello-attachments.s3.amazonaws.com/5f58254dfc4a193807fa3cf5/1150x668/d30c3356cc9183eaa9da790a637af2c9/parte2.png"/><br/>
+
+Finalizada a rotina de crescimento de grão, quando o contador atinge 210 quadros, realiza-se novamente o mesmo procedimento da etapa anterior utilizando o último valor da coordenada z dos pontos.
+
+<img alt="Worley Noise" title="Worley Noise" style="width: 52%" src="https://trello-attachments.s3.amazonaws.com/5f58254dfc4a193807fa3cf5/603x388/b30e6c752451867c309ddf6b6a8b5032/parte3.png"/><br/>
