@@ -40,6 +40,7 @@ const ArticleContent = [
       'This is a wider card with supporting text below as a natural lead-in to additional content.',
     image: LaserImg,
     imageText: 'Image Text',
+    url: '/laser-ray',
   },
   {
     title: 'Simulação Microestrutural',
@@ -48,6 +49,7 @@ const ArticleContent = [
       'This is a wider card with supporting text below as a natural lead-in to additional content.',
     image: Micros,
     imageText: 'Image Text',
+    url: '/microstructure',
   },
   {
     title: 'Resistência Mecânica',
@@ -56,6 +58,7 @@ const ArticleContent = [
       'This is a wider card with supporting text below as a natural lead-in to additional content.',
     image: Deform,
     imageText: 'Image Text',
+    url: '/resistance',
   },
 ];
 

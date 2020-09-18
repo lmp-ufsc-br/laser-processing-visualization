@@ -27,7 +27,7 @@ export default function ArticleCard(props) {
 
   return (
     <Grid item xs={12} md={4}>
-      <CardActionArea component="a" href="#">
+      <CardActionArea component="a" href={post.url}>
         <Card className={classes.card}>
           <div className={classes.cardDetails}>
             <CardContent>
