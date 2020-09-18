@@ -22,7 +22,7 @@ function Laser() {
         Etiam porta sem malesuada magna mollis euismod. Cras mattis consectetur
         purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.
       </p>
-      <a href="/">
+      <a href="/laser-ray">
         <p>Continue lendo...</p>
       </a>
     </div>
