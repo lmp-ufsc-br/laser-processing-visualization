@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
 const TitleContent = {
   title: 'Visualização de grãos',
   description:
-    'Estudo alternativas para utilização de ferramenta iterativa de visualização do crescimento de grãos',
+    'Estudo de alternativas para utilização de ferramenta iterativa de visualização do crescimento de grãos',
   image:
     'https://trello-attachments.s3.amazonaws.com/5c7e19a8679c4b3e46bd66ee/5f58254dfc4a193807fa3cf5/8437307eac5b61312ae7407a1a7270b8/image.png',
   imgText: 'main image description',
@@ -71,7 +71,7 @@ export default function Blog() {
         <main>
           <TitleCard post={TitleContent} />
           <Grid container spacing={5} className={classes.mainGrid}>
-            <PostContent title="Simulação estrutural preliminar de um corpo de prova não homogêneo" />
+            <PostContent title="" />
             <Sidebar
               title={sidebar.title}
               description={sidebar.description}
