@@ -14,11 +14,14 @@ export default class CurrentCanvas extends React.Component {
   }
 
   Sketch = (s) => {
-    let a;
+    /** Particle definition */
 
-    const Particle = function (position) {
-      this.diameter = 10;
+    const Particle = function (position, diameter) {
+      this.diameter = diameter;
       this.pos = position.copy();
+      this.vel = s.createVector(0, 0);
+      this.acc = s.createVector(0, 0);
+      this.lifeSpan = 255;
     };
 
     Particle.prototype.isDead = function () {
@@ -26,19 +29,57 @@ export default class CurrentCanvas extends React.Component {
     };
 
     Particle.prototype.update = function () {
-      this.diameter += 2;
+      this.acc = P5.Vector.random2D().setMag(0.2);
+      this.vel.add(this.acc);
+      this.pos.add(this.vel);
+      this.lifeSpan -= 1;
     };
 
     Particle.prototype.display = function () {
+      s.fill(255, this.lifeSpan);
+      s.noStroke();
       s.ellipse(this.pos.x, this.pos.y, this.diameter);
+    };
+
+    /** PARTICLE SYSTEM */
+
+    const ParticleSystem = function (position, mean, std) {
+      this.mean = mean;
+      this.std = std;
+      this.origin = position.copy();
+      this.particles = [];
+    };
+
+    ParticleSystem.prototype.addParticle = function () {
+      this.particles.push(
+        new Particle(this.origin, 100 * s.randomGaussian(this.mean, this.std))
+      );
+    };
+
+    ParticleSystem.prototype.run = function () {
+      this.particles.forEach((particle, index) => {
+        particle.update();
+
+        if (particle.isDead()) {
+          this.particles.splice(index, 1);
+        }
+
+        particle.display();
+      });
     };
 
     /** Sketch definition */
 
+    let system;
+
+    const mean = 0.08;
+    const std = 0.01;
+    const scaledDiameter = 10; // px
+
     s.setup = () => {
       s.createCanvas(this.myRef.current.clientWidth, 400);
       const origin = s.createVector(s.width / 2, s.height / 2);
-      a = new Particle(origin);
+      system = new ParticleSystem(origin, mean, std);
     };
 
     s.windowResized = () => {
@@ -46,14 +87,10 @@ export default class CurrentCanvas extends React.Component {
     };
 
     s.draw = () => {
-      /** Draw gray background with R, G and B with same value */
-      s.background(200);
+      s.background(0);
 
-      /** Laser Source has no stroke (border line) */
-      s.noStroke();
-
-      a.update();
-      a.display();
+      system.addParticle();
+      system.run();
     };
   };
 
