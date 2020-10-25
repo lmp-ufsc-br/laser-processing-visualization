@@ -99,14 +99,18 @@ export default class CurrentCanvas extends React.Component {
     const scaledDiameter = 10; // px
 
     s.setup = () => {
-      s.createCanvas(this.myRef.current.clientWidth, 400);
-      const origin = s.createVector(s.width / 2, s.height / 2);
-      system = new ParticleSystem(origin, mean, std);
-      scale = new Scale(scaledDiameter, mean, 50);
+      if (this.myRef.current) {
+        s.createCanvas(this.myRef.current.clientWidth, 400);
+        const origin = s.createVector(s.width / 2, s.height / 2);
+        system = new ParticleSystem(origin, mean, std);
+        scale = new Scale(scaledDiameter, mean, 50);
+      }
     };
 
     s.windowResized = () => {
-      s.resizeCanvas(this.myRef.current.clientWidth, 400);
+      if (this.myRef.current) {
+        s.resizeCanvas(this.myRef.current.clientWidth, 400);
+      }
     };
 
     s.draw = () => {
