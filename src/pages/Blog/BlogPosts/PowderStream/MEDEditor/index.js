@@ -9,6 +9,7 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import content from './introcontent.md';
+import P5Canvas from './P5Canvas/CurrentCanvas';
 
 const AntTabs = withStyles(() => ({
   root: {
@@ -117,9 +118,15 @@ export default function FullWidthTabs() {
       >
         <TabPanel value={value} index={0} dir={theme.direction}>
           <MDEditor.Markdown source={markdown} />
+          <Box pt={3} pb={3}>
+            <P5Canvas />
+          </Box>
         </TabPanel>
         <TabPanel value={value} index={1} dir={theme.direction}>
           <MDEditor value={markdown} onChange={setMarkdown} preview="edit" />
+          <Box pt={3} pb={3}>
+            <P5Canvas />
+          </Box>
         </TabPanel>
       </SwipeableViews>
     </div>
