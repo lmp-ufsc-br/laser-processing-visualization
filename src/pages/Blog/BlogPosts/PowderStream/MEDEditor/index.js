@@ -9,12 +9,9 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 
-const AntTabs = withStyles((theme) => ({
+const AntTabs = withStyles(() => ({
   root: {
     borderBottom: '1px solid #e8e8e8',
-  },
-  indicator: {
-    backgroundColor: theme.palette.primary.main,
   },
 }))(Tabs);
 
@@ -78,7 +75,7 @@ const useStyles = makeStyles((theme) => ({
 export default function FullWidthTabs() {
   const classes = useStyles();
   const theme = useTheme();
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = React.useState(1);
   const [markdown, setMarkdown] = React.useState('**Hello world!!!**');
 
   const handleChange = (event, newValue) => {
@@ -92,22 +89,15 @@ export default function FullWidthTabs() {
   return (
     <div className={classes.root}>
       <AppBar position="static" color="default" elevation={0}>
-        <AntTabs value={value} onChange={handleChange} aria-label="ant example">
-          <AntTab label="Tab 1" />
-          <AntTab label="Tab 2" />
-          <AntTab label="Tab 3" />
-        </AntTabs>
-        <Tabs
+        <AntTabs
           value={value}
           onChange={handleChange}
           indicatorColor="primary"
-          textColor="primary"
-          variant="fullWidth"
-          aria-label="full width tabs example"
+          aria-label="ant example"
         >
-          <Tab label="Editar" {...a11yProps(0)} />
-          <Tab label="Visualizar" {...a11yProps(1)} />
-        </Tabs>
+          <AntTab label="Editar" {...a11yProps(0)} />
+          <AntTab label="Visualizar" {...a11yProps(1)} />
+        </AntTabs>
       </AppBar>
       <SwipeableViews
         axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
