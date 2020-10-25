@@ -8,6 +8,7 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
+import content from './introcontent.md';
 
 const AntTabs = withStyles(() => ({
   root: {
@@ -75,7 +76,7 @@ const useStyles = makeStyles((theme) => ({
 export default function FullWidthTabs() {
   const classes = useStyles();
   const theme = useTheme();
-  const [value, setValue] = React.useState(1);
+  const [value, setValue] = React.useState(0);
   const [markdown, setMarkdown] = React.useState('**Hello world!!!**');
 
   const handleChange = (event, newValue) => {
@@ -86,6 +87,16 @@ export default function FullWidthTabs() {
     setValue(index);
   };
 
+  const handleMarkdown = async () => {
+    const a = await fetch(content);
+    const b = await a.text();
+    setMarkdown(b);
+  };
+
+  React.useEffect(() => {
+    handleMarkdown();
+  }, []);
+
   return (
     <div className={classes.root}>
       <AppBar position="static" color="default" elevation={0}>
@@ -95,20 +106,20 @@ export default function FullWidthTabs() {
           indicatorColor="primary"
           aria-label="ant example"
         >
-          <AntTab label="Editar" {...a11yProps(0)} />
-          <AntTab label="Visualizar" {...a11yProps(1)} />
+          <AntTab label="Visualizar" {...a11yProps(0)} />
+          <AntTab label="Editar" {...a11yProps(1)} />
         </AntTabs>
       </AppBar>
       <SwipeableViews
-        axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
+        axis={theme.direction === 'rtl' ? 'x' : 'x-reverse'}
         index={value}
         onChangeIndex={handleChangeIndex}
       >
         <TabPanel value={value} index={0} dir={theme.direction}>
-          <MDEditor value={markdown} onChange={setMarkdown} preview="edit" />
+          <MDEditor.Markdown source={markdown} />
         </TabPanel>
         <TabPanel value={value} index={1} dir={theme.direction}>
-          <MDEditor.Markdown source={markdown} />
+          <MDEditor value={markdown} onChange={setMarkdown} preview="edit" />
         </TabPanel>
       </SwipeableViews>
     </div>
