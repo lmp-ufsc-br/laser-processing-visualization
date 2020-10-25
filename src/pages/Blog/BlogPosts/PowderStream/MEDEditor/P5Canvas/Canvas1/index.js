@@ -16,9 +16,29 @@ export default class CurrentCanvas extends React.Component {
   Sketch = (s) => {
     let a;
 
+    const Particle = function (position) {
+      this.diameter = 10;
+      this.pos = position.copy();
+    };
+
+    Particle.prototype.isDead = function () {
+      return this.lifeSpan < 0;
+    };
+
+    Particle.prototype.update = function () {
+      this.diameter += 2;
+    };
+
+    Particle.prototype.display = function () {
+      s.ellipse(this.pos.x, this.pos.y, this.diameter);
+    };
+
+    /** Sketch definition */
+
     s.setup = () => {
       s.createCanvas(this.myRef.current.clientWidth, 400);
-      a = new Particle();
+      const origin = s.createVector(s.width / 2, s.height / 2);
+      a = new Particle(origin);
     };
 
     s.windowResized = () => {
@@ -34,18 +54,6 @@ export default class CurrentCanvas extends React.Component {
 
       a.update();
       a.display();
-    };
-
-    let Particle = function () {
-      this.diameter = 10;
-    };
-
-    Particle.prototype.update = function () {
-      this.diameter += 2;
-    };
-
-    Particle.prototype.display = function () {
-      s.ellipse(s.mouseX, s.mouseY, this.diameter);
     };
   };
 
