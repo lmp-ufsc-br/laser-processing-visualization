@@ -68,9 +68,31 @@ export default class CurrentCanvas extends React.Component {
       });
     };
 
+    /** SCALE DEFINITION */
+
+    const Scale = function (px, mm, scaleSizePx) {
+      this.scaleSizePx = scaleSizePx;
+      this.pxPerMilimeter = px / mm;
+      this.pxPerMicrometer = px / mm / 1000;
+      this.label = {
+        milimeters: `${scaleSizePx / this.pxPerMilimeter} mm`,
+        micrometers: `${scaleSizePx / this.pxPerMicrometer} \u03BCm`,
+      };
+    };
+
+    Scale.prototype.display = function () {
+      s.stroke(255);
+      s.strokeWeight(4);
+      s.line(25, 25, 25 + this.scaleSizePx, 25);
+
+      s.noStroke();
+      s.text(`${this.label.micrometers}`, 25, 45);
+    };
+
     /** Sketch definition */
 
     let system;
+    let scale;
 
     const mean = 0.08;
     const std = 0.01;
@@ -80,6 +102,7 @@ export default class CurrentCanvas extends React.Component {
       s.createCanvas(this.myRef.current.clientWidth, 400);
       const origin = s.createVector(s.width / 2, s.height / 2);
       system = new ParticleSystem(origin, mean, std);
+      scale = new Scale(scaledDiameter, mean, 50);
     };
 
     s.windowResized = () => {
@@ -91,6 +114,7 @@ export default class CurrentCanvas extends React.Component {
 
       system.addParticle();
       system.run();
+      scale.display();
     };
   };
 
