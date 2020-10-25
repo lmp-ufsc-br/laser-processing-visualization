@@ -14,7 +14,7 @@ export default class CurrentCanvas extends React.Component {
   }
 
   Sketch = (s) => {
-    /** Particle definition */
+    /** PARTICLE */
 
     const Particle = function (position, diameter) {
       this.diameter = diameter;
@@ -68,7 +68,7 @@ export default class CurrentCanvas extends React.Component {
       });
     };
 
-    /** SCALE DEFINITION */
+    /** SCALE */
 
     const Scale = function (px, mm, scaleSizePx) {
       this.scaleSizePx = scaleSizePx;
@@ -89,7 +89,7 @@ export default class CurrentCanvas extends React.Component {
       s.text(`${this.label.micrometers}`, 25, 45);
     };
 
-    /** Sketch definition */
+    /** SKETCH */
 
     let system;
     let scale;
