@@ -116,9 +116,14 @@ export default class CurrentCanvas extends React.Component {
     s.draw = () => {
       s.background(0);
 
-      system.addParticle();
-      system.run();
-      scale.display();
+      if (system) {
+        system.addParticle();
+        system.run();
+      }
+
+      if (scale) {
+        scale.display();
+      }
     };
   };
 
