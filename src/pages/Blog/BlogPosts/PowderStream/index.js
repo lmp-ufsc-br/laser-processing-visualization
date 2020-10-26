@@ -8,8 +8,8 @@ import InstagramIcon from '@material-ui/icons/Instagram';
 import LinkdedInIcon from '@material-ui/icons/LinkedIn';
 import TitleCard from './TitleCard';
 import Sidebar from './Sidebar';
-
 import PostContent from './PostContent';
+import MEDEditor from './MEDEditor';
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
@@ -70,13 +70,18 @@ export default function Blog() {
         <main>
           <TitleCard post={TitleContent} />
           <Grid container spacing={5} className={classes.mainGrid}>
-            <PostContent title="Simulação de um sistema de partículas" />
-            <Sidebar
-              title={sidebar.title}
-              description={sidebar.description}
-              archives={sidebar.archives}
-              social={sidebar.social}
-            />
+            {/* <PostContent title="Simulação de um sistema de partículas" /> */}
+            <Grid item xs={12} md={8}>
+              <MEDEditor />
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <Sidebar
+                title={sidebar.title}
+                description={sidebar.description}
+                archives={sidebar.archives}
+                social={sidebar.social}
+              />
+            </Grid>
           </Grid>
         </main>
       </Container>
